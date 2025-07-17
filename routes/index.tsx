@@ -3,6 +3,7 @@ export default function Home() {
     <div class="border-dashed border-black border-2">
       <h1 class="text-2xl">Home</h1>
       <p>This is the body of the Home component.</p>
+      <button class="btn btn-active btn-primary">Primary</button>
     </div>
   );
 }
