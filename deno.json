@@ -1,11 +1,13 @@
 {
   "lock": false,
   "tasks": {
+    "start": "deno run -A --watch=static/,routes/,islands/ dev.ts & deno task tailwind:dev",
+    "build": "deno task tailwind:build",
+    "tailwind:dev": "./tailwindcss --input styles/tailwind.css --output static/styles.css --watch",
+    "tailwind:build": "./tailwindcss --input styles/tailwind.css --output static/styles.css --minify",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
-    "start": "deno run -A --watch=static/,routes/ dev.ts",
-    "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
@@ -26,9 +28,6 @@
     "preact/": "https://esm.sh/preact@10.22.0/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
-    "tailwindcss": "npm:tailwindcss@3.4.1",
-    "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-    "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "daisyui": "npm:daisyui@^5.0.46",
     "$std/": "https://deno.land/std@0.216.0/"
   },
