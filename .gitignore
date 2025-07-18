@@ -19,3 +19,5 @@ tailwindcss.exe
 .vscode
 
 /static/styles.css
+
+/dummy

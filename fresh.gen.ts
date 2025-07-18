@@ -4,6 +4,7 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $about_index from "./routes/about/index.tsx";
 import * as $contact_index from "./routes/contact/index.tsx";
 import * as $index from "./routes/index.tsx";
 
@@ -13,6 +14,7 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/about/index.tsx": $about_index,
     "./routes/contact/index.tsx": $contact_index,
     "./routes/index.tsx": $index,
   },
