@@ -11,9 +11,9 @@ export default function App({ Component }: PageProps) {
         <title>personal-site</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body>
+      <body class="flex flex-col h-screen">
         <Navbar />
-        <main>
+        <main class="grow">
           <Component />
         </main>
         <Footer />
