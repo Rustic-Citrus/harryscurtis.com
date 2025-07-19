@@ -12,12 +12,12 @@ node_modules/
 
 GEMINI.md
 .vscode
-/posts
+posts/
 
 tailwindcss.exe
 
 .vscode
 
-/static/styles.css
+static/styles.css
 
-/dummy
+dummy/
