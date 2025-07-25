@@ -1,3 +1,5 @@
+import { useSignal } from "@preact/signals";
+
 declare const grecaptcha: any;
 
 interface ContactFormProps {
@@ -5,9 +7,14 @@ interface ContactFormProps {
 }
 
 export const ContactForm = ({ siteKey }: ContactFormProps) => {
+  const submitButtonContent = useSignal(<span>Send</span>);
+
   const onFormSubmit = (e: Event) => {
-    e.preventDefault(); // Stop the form from submitting immediately.
+    e.preventDefault();
     const form = e.target as HTMLFormElement;
+    submitButtonContent.value = (
+      <span class="loading loading-dots loading-md"></span>
+    );
 
     grecaptcha.ready(function () {
       grecaptcha.execute(siteKey, { action: "submit" }).then(
@@ -83,7 +90,7 @@ export const ContactForm = ({ siteKey }: ContactFormProps) => {
         type="submit"
         class="btn btn-primary self-end w-full max-w-2/3 lg:max-w-1/2 my-2"
       >
-        Send
+        {submitButtonContent}
       </button>
     </form>
   );
