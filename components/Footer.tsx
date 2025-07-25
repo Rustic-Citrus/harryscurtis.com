@@ -6,7 +6,7 @@ export const Footer = () => {
       <aside>
         <p>
           Copyright © {year}{" "}
-          - All right reserved by Harry Stuart Curtis
+          - All rights reserved by Harry Stuart Curtis.
         </p>
       </aside>
     </footer>
