@@ -2,7 +2,7 @@ import { CardProps } from "../types/index.ts";
 
 export const Card = ({ item }: CardProps) => {
   return (
-    <div class="card w-72 bg-base-100 card-xl shadow-lg">
+    <div class="card w-72 card-xl shadow-lg">
       <div class="card-body">
         <h2 class="card-title">{item.title ?? ""}</h2>
         <p>
