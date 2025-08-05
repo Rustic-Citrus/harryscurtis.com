@@ -13,7 +13,7 @@ export default function App({ Component }: PageProps) {
       </head>
       <body class="flex flex-col h-screen">
         <Navbar />
-        <main class="grow flex justify-center">
+        <main class="grow flex justify-center animate-clockwise bg-linear-to-br from-accent to-primary bg-size-[400%] text-secondary-content">
           <Component />
         </main>
         <Footer />
