@@ -2,7 +2,6 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import "jsr:@std/dotenv/load";
 import { ContactForm } from "../../islands/ContactForm.tsx";
-
 export const handler: Handlers = {
   GET(_req, ctx) {
     const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY");
@@ -15,23 +14,18 @@ export const handler: Handlers = {
     const formData = await req.formData();
     const token = formData.get("g-recaptcha-response")?.toString();
     const secretKey = Deno.env.get("RECAPTCHA_SECRET_KEY");
-
     if (!token || !secretKey) {
       return new Response("reCAPTCHA configuration error.", { status: 500 });
     }
-
     const verificationUrl =
       `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
     const verificationResult = await fetch(verificationUrl, { method: "POST" });
     const googleResponse: { success: boolean; score: number } =
       await verificationResult.json();
-
     if (googleResponse.success && googleResponse.score > 0.5) {
-      // ✅ reCAPTCHA passed.
       console.log("reCAPTCHA verified. Submitting to web3forms...");
       formData.delete("g-recaptcha-response");
       formData.append("access_key", "518dc71b-89a2-4e91-838c-afc380a61603");
-
       const web3formsResponse = await fetch(
         "https://api.web3forms.com/submit",
         {
@@ -39,10 +33,8 @@ export const handler: Handlers = {
           body: formData,
         },
       );
-
       const data = await web3formsResponse.json();
       const headers = new Headers();
-
       if (data.success) {
         headers.set("location", "/contact/success");
         return new Response(null, {
@@ -55,7 +47,6 @@ export const handler: Handlers = {
         return new Response(null, { status: 303, headers });
       }
     } else {
-      // ❌ reCAPTCHA failed.
       console.warn(
         "reCAPTCHA verification failed. Score:",
         googleResponse.score,
@@ -69,7 +60,6 @@ export const handler: Handlers = {
     }
   },
 };
-
 export default function Contact({ data }: PageProps<{ siteKey: string }>) {
   const { siteKey } = data;
   return (
