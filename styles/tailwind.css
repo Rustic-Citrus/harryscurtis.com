@@ -2,8 +2,43 @@
 
 @plugin "daisyui";
 
+@plugin "daisyui/theme" {
+  name: "rustic";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+  --color-base-content: oklch(21% 0.006 285.885);
+  --color-primary: oklch(84% 0.143 164.978);
+  --color-primary-content: oklch(37% 0.01 67.558);
+  --color-secondary: oklch(86% 0.127 207.078);
+  --color-secondary-content: oklch(44% 0.011 73.639);
+  --color-accent: oklch(62% 0.214 259.815);
+  --color-accent-content: oklch(97% 0.001 106.424);
+  --color-neutral: oklch(14% 0.005 285.823);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(72% 0.219 149.579);
+  --color-success-content: oklch(26% 0 0);
+  --color-warning: oklch(94% 0.129 101.54);
+  --color-warning-content: oklch(37% 0 0);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(27% 0.033 256.848);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.21875rem;
+  --size-field: 0.21875rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
 @theme {
-  --animate-clockwise: clockwise 12s ease-in-out infinite;
+  --animate-clockwise: clockwise 6s ease-in-out infinite;
 
   @keyframes clockwise {
     0% {

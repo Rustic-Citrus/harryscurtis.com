@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar.tsx";
 
 export default function App({ Component }: PageProps) {
   return (
-    <html>
+    <html data-theme="rustic">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,7 @@ export default function App({ Component }: PageProps) {
       </head>
       <body class="flex flex-col h-screen">
         <Navbar />
-        <main class="grow flex justify-center animate-clockwise bg-linear-to-br from-accent to-primary bg-size-[400%] text-secondary-content">
+        <main class="grow flex justify-center animate-clockwise bg-radial-[at_75%_75%] from-secondary to-base-100 bg-size-[200%] text-secondary-content">
           <Component />
         </main>
         <Footer />
