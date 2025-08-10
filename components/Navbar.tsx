@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar sticky top-0 bg-base-100\25 backdrop-blur-md shadow-sm z-100">
       <div class="navbar-start">
       </div>
       <div class="navbar-center">
@@ -30,7 +30,7 @@ export const Navbar = () => {
           </div>
           <ul
             tabindex={0}
-            class="menu menu-sm dropdown-content bg-base-100/25 z-1 mt-3 w-52 p-2 shadow-xl"
+            class="menu menu-sm dropdown-content bg-base-100 z-101 mt-3 w-52 p-2 shadow-xl"
           >
             <li>
               <a href="/">Homepage</a>
