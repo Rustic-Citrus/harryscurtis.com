@@ -8,7 +8,11 @@ export const Navbar = () => {
       </div>
       <div class="navbar-end">
         <div class="dropdown dropdown-end">
-          <div tabindex={0} role="button" class="btn btn-ghost btn-circle">
+          <div
+            tabindex={0}
+            role="button"
+            class="btn btn-ghost btn-circle"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -26,7 +30,7 @@ export const Navbar = () => {
           </div>
           <ul
             tabindex={0}
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            class="menu menu-sm dropdown-content bg-base-100/25 z-1 mt-3 w-52 p-2 shadow-xl"
           >
             <li>
               <a href="/">Homepage</a>

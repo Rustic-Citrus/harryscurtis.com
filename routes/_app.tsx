@@ -11,9 +11,9 @@ export default function App({ Component }: PageProps) {
         <title>personal-site</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body class="flex flex-col h-screen">
+      <body class="flex flex-col h-screen animate-clockwise bg-radial-[at_75%_75%] from-secondary via-base-100 to-secondary bg-size-[200%]">
         <Navbar />
-        <main class="grow flex justify-center animate-clockwise bg-radial-[at_75%_75%] from-secondary to-base-100 bg-size-[200%] text-secondary-content">
+        <main class="grow flex justify-center text-secondary-content">
           <Component />
         </main>
         <Footer />
