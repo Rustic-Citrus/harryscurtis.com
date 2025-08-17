@@ -73,7 +73,7 @@ export default function Contact({ data }: PageProps<{ siteKey: string }>) {
       <div class="md:mx-24 xl:mx-72">
         <h1 class="text-4xl text-center pb-8 pt-4">Contact</h1>
         <div class="chat chat-start">
-          <div class="chat-bubble py-4">
+          <div class="chat-bubble bg-white/50 border border-gray-200 py-4">
             <p>
               Thanks for taking the time to visit the site. You can leave a
               message using the form below.

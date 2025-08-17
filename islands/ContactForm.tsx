@@ -1,21 +1,16 @@
 import { useSignal } from "@preact/signals";
-
 declare const grecaptcha: any;
-
 interface ContactFormProps {
   siteKey: string;
 }
-
 export const ContactForm = ({ siteKey }: ContactFormProps) => {
   const submitButtonContent = useSignal(<span>Send</span>);
-
   const onFormSubmit = (e: Event) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     submitButtonContent.value = (
       <span class="loading loading-dots loading-md"></span>
     );
-
     grecaptcha.ready(function () {
       grecaptcha.execute(siteKey, { action: "submit" }).then(
         function (token: string) {
@@ -24,18 +19,16 @@ export const ContactForm = ({ siteKey }: ContactFormProps) => {
             "#g-recaptcha-response",
           ) as HTMLInputElement;
           input.value = token;
-
           // Now, submit the form
           form.submit();
         },
       );
     });
   };
-
   return (
     <form
       method="POST"
-      class="chat-bubble lg:w-1/2 flex flex-col"
+      class="chat-bubble bg-gray-100 border border-gray-200 lg:w-1/2 flex flex-col"
       onSubmit={onFormSubmit}
     >
       <fieldset class="fieldset">
