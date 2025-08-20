@@ -28,7 +28,7 @@ export const ContactForm = ({ siteKey }: ContactFormProps) => {
   return (
     <form
       method="POST"
-      class="chat-bubble bg-gray-100 border border-gray-200 lg:w-1/2 flex flex-col"
+      class="chat-bubble bg-gray-100/50 border border-gray-200 lg:w-1/2 flex flex-col"
       onSubmit={onFormSubmit}
     >
       <fieldset class="fieldset">
