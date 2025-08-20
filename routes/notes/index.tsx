@@ -1,5 +1,6 @@
 import data from "../../dummy/posts.json" with { type: "json" };
 import { Card } from "../../components/Card.tsx";
+import { NotesPagination } from "../../islands/NotesPagination.tsx";
 export default function Notes() {
   return (
     <div class="flex flex-col gap-2">
@@ -23,18 +24,7 @@ export default function Notes() {
         </svg>
         <input type="search" class="grow" placeholder="Search" />
       </label>
-      <div class="grid col-span-3">
-        {data.map((post, _index) => {
-          const cardData =
-            (({ title, summary, link }) => ({ title, summary, link }))(post);
-          return (
-            <Card
-              item={cardData}
-            />
-          );
-        })}
-      </div>
+      <NotesPagination />
     </div>
   );
 }
-
