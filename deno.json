@@ -1,39 +1,23 @@
 {
-  "lock": false,
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/,islands/ dev.ts & deno task tailwind:dev",
-    "build": "deno task tailwind:build",
-    "tailwind:dev": "./tailwindcss --input styles/tailwind.css --output static/styles.css --watch",
-    "tailwind:build": "./tailwindcss --input styles/tailwind.css --output static/styles.css --minify",
-    "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
-    "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
-    "manifest": "deno task cli manifest $(pwd)",
-    "preview": "deno run -A main.ts",
-    "update": "deno run -A -r https://fresh.deno.dev/update ."
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "deno serve -A _fresh/server.js"
   },
-  "lint": {
-    "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
-    }
-  },
-  "exclude": [
-    "**/_fresh/*"
-  ],
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "exclude": ["**/_fresh/*"],
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
-    "preact": "https://esm.sh/preact@10.22.0",
+    "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.4",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.13",
+    "preact": "npm:preact@^10.27.2",
     "preact/": "https://esm.sh/preact@10.22.0/",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
-    "daisyui": "npm:daisyui@^5.0.46",
-    "$std/": "https://deno.land/std@0.216.0/"
+    "@preact/signals": "npm:@preact/signals@^2.3.1",
+    "tailwindcss": "npm:tailwindcss@^4.1.0",
+    "daisyui": "npm:daisyui@^5.1.0",
+    "$std/": "https://deno.land/std@0.216.0/",
+    "vite": "npm:vite@^7.1.7",
+    "fresh": "jsr:@fresh/core@^2.1.1"
   },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "nodeModulesDir": "auto"
 }

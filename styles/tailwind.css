@@ -1,7 +1,5 @@
-@import "tailwindcss" source("..");
-
+@import "tailwindcss";
 @plugin "daisyui";
-
 @plugin "daisyui/theme" {
   name: "rustic";
   default: false;

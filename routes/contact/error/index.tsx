@@ -1,4 +1,4 @@
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "fresh/runtime";
 import { InformationCard } from "../../../components/InformationCard.tsx";
 
 export default function ContactError() {

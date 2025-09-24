@@ -1,16 +1,19 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
+import { PageProps } from "fresh";
+import { Head } from "fresh/runtime";
 import "jsr:@std/dotenv/load";
 import { ContactForm } from "../../islands/ContactForm.tsx";
+import { Handlers } from "fresh/compat";
+
 export const handler: Handlers = {
-  GET(_req, ctx) {
+  GET(ctx) {
     const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY");
     if (!siteKey) {
       console.error("RECAPTCHA_SITE_KEY is not set in the environment.");
     }
     return ctx.render({ siteKey });
   },
-  async POST(req, _ctx) {
+  async POST(_ctx) {
+    const req = ctx.req;
     const formData = await req.formData();
     const token = formData.get("g-recaptcha-response")?.toString();
     const secretKey = Deno.env.get("RECAPTCHA_SECRET_KEY");
