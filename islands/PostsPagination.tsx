@@ -1,9 +1,12 @@
-import data from "../dummy/posts.json" with { type: "json" };
+// import data from "../dummy/posts.json" with { type: "json" };
 import { Card } from "../components/Card.tsx";
 import { Post } from "../types/index.ts";
 import { Signal, useSignal } from "@preact/signals";
 const POSTS_PER_PAGE = 9;
 const getPageCount = (posts: Post[], postsPerPage: number): number => {
+  if (posts.length === 0) {
+    return 0;
+  }
   const pageCount = posts.length % postsPerPage === 0
     ? posts.length / postsPerPage
     : Math.floor(posts.length / postsPerPage) + 1;
@@ -24,6 +27,9 @@ const buildPage = (
 const buildPages = (posts: Post[], postsPerPage: number): Post[][] => {
   const pages = [];
   const pageCount = getPageCount(posts, postsPerPage);
+  if (pageCount === 0) {
+    return [[]];
+  }
   for (let i = 0; i < pageCount; i++) {
     const currentPage = buildPage(posts, postsPerPage, i);
     pages.push(currentPage);
@@ -43,21 +49,26 @@ const decrementCurrentPage = (currentPageSignal: Signal) => {
 };
 /* TODO: Adjust the style of the pagination section so that it appears centralised.
  */
-export const NotesPagination = () => {
+
+const data = [];
+
+export const PostsPagination = () => {
   const currentPage = useSignal(0);
   const pages = buildPages(data, POSTS_PER_PAGE);
   return (
     <>
       <div class="grid grid-cols-3 gap-3">
-        {pages[currentPage.value].map((post, _index) => {
-          const cardData =
-            (({ title, summary, link }) => ({ title, summary, link }))(post);
-          return (
-            <Card
-              item={cardData}
-            />
-          );
-        })}
+        {pages.length === 0
+          ? <>No posts were found.</>
+          : pages[currentPage.value].map((post, _index) => {
+            const cardData =
+              (({ title, summary, link }) => ({ title, summary, link }))(post);
+            return (
+              <Card
+                item={cardData}
+              />
+            );
+          })}
       </div>
       <div class="join">
         <button

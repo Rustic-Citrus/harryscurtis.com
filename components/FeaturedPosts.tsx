@@ -14,8 +14,8 @@ export const FeaturedPosts = ({ item }: FeaturedPostsProps) => {
       })}
       <Card
         item={{
-          title: "More notes",
-          summary: "Click the button below to see all notes.",
+          title: "More posts",
+          summary: "Click the button below to see all posts.",
           link: "/posts",
           buttonClass: "btn-outline",
           buttonText: "See more",

@@ -4,7 +4,7 @@ export const Navbar = () => {
       <div class="navbar-start">
       </div>
       <div class="navbar-center">
-        <a class="text-xl">hsc</a>
+        <a class="text-xl">Harry Stuart Curtis</a>
       </div>
       <div class="navbar-end">
         <div class="dropdown dropdown-end">
@@ -36,7 +36,7 @@ export const Navbar = () => {
               <a href="/">Homepage</a>
             </li>
             <li>
-              <a href="/notes">Notes</a>
+              <a href="/posts">Posts</a>
             </li>
             <li>
               <a href="/examples">Examples</a>

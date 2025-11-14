@@ -1,10 +1,9 @@
-import data from "../../dummy/posts.json" with { type: "json" };
-import { Card } from "../../components/Card.tsx";
-import { NotesPagination } from "../../islands/NotesPagination.tsx";
-export default function Notes() {
+// import data from "../../dummy/posts.json" with { type: "json" };
+import { PostsPagination } from "../../islands/PostsPagination.tsx";
+export default function Posts() {
   return (
     <div class="flex flex-col gap-2">
-      <h1 class="pt-4 text-3xl">Notes</h1>
+      <h1 class="pt-4 text-3xl">Posts</h1>
       <label class="input">
         <svg
           class="h-[1em] opacity-50"
@@ -24,7 +23,7 @@ export default function Notes() {
         </svg>
         <input type="search" class="grow" placeholder="Search" />
       </label>
-      <NotesPagination />
+      <PostsPagination />
     </div>
   );
 }
