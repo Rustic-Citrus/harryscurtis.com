@@ -5,14 +5,14 @@ const posts: Post[] = [];
 
 export default function Home() {
   return (
-    <div class="flex flex-col lg:flex-row justify-center gap-4 *:m-5 *:flex *:flex-col *:gap-2">
-      <div class="justify-left lg:max-w-1/2 text-primary-content">
-        <h1 class="text-4xl pt-10 pb-4">
+    <div class="flex grow flex-col lg:flex-row justify-center gap-4 *:m-5 *:flex *:flex-col *:gap-2">
+      <div class="flex justify-center lg:max-w-1/2 text-primary-content">
+        <h1 class="text-4xl pt-10 font-bold pb-4">
           Curtis Digital Consultancy
         </h1>
-        <h2 class="text-xl">
+        <h2 class="text-2xl italic">
           Providing consultation services on all things digital
-        </h2>
+        </h2>{" "}
         <p class="text-lg">
           Based in the Hay-on-Wye area, I provide consulting and support
           services for problems related to IT, Software Engineering and Data
@@ -34,7 +34,7 @@ export default function Home() {
         </p>
       </div>
       <div class="justify-center">
-        <h1 class="text-3xl pb-5">Featured Posts</h1>
+        <h1 class="text-3xl font-bold pb-5">Featured Posts</h1>
         <FeaturedPosts item={posts.slice(0, 3)} />
       </div>
     </div>

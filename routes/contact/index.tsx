@@ -1,20 +1,9 @@
-import { PageProps } from "fresh";
-import { Head } from "fresh/runtime";
-import "jsr:@std/dotenv/load";
 import { ContactForm } from "../../islands/ContactForm.tsx";
-import { Handlers } from "fresh/compat";
+import { define } from "../../utils.ts";
 
-export const handler: Handlers = {
-  GET(ctx) {
-    const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY");
-    if (!siteKey) {
-      console.error("RECAPTCHA_SITE_KEY is not set in the environment.");
-    }
-    return ctx.render({ siteKey });
-  },
-  async POST(_ctx) {
-    const req = ctx.req;
-    const formData = await req.formData();
+export const handler = define.handlers({
+  async POST(ctx) {
+    const formData = await ctx.req.formData();
     const token = formData.get("g-recaptcha-response")?.toString();
     const secretKey = Deno.env.get("RECAPTCHA_SECRET_KEY");
     if (!token || !secretKey) {
@@ -62,17 +51,11 @@ export const handler: Handlers = {
       );
     }
   },
-};
-export default function Contact({ data }: PageProps<{ siteKey: string }>) {
-  const { siteKey } = data;
+});
+export default define.page(() => {
+  const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY");
   return (
     <>
-      <Head>
-        <script
-          src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`}
-        >
-        </script>
-      </Head>
       <div class="md:mx-24 xl:mx-72">
         <h1 class="text-4xl text-center pb-8 pt-4">Contact</h1>
         <div class="chat chat-start">
@@ -89,4 +72,4 @@ export default function Contact({ data }: PageProps<{ siteKey: string }>) {
       </div>
     </>
   );
-}
+});

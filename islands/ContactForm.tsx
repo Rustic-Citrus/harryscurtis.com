@@ -1,9 +1,6 @@
 import { useSignal } from "@preact/signals";
-declare const grecaptcha: any;
-interface ContactFormProps {
-  siteKey: string;
-}
-export const ContactForm = ({ siteKey }: ContactFormProps) => {
+
+export const ContactForm = ({ siteKey }: { siteKey: string }) => {
   const submitButtonContent = useSignal(<span>Send</span>);
   const onFormSubmit = (e: Event) => {
     e.preventDefault();
@@ -11,15 +8,15 @@ export const ContactForm = ({ siteKey }: ContactFormProps) => {
     submitButtonContent.value = (
       <span class="loading loading-dots loading-md"></span>
     );
-    grecaptcha.ready(function () {
-      grecaptcha.execute(siteKey, { action: "submit" }).then(
-        function (token: string) {
-          // Add the token to a hidden input field
+    // @ts-ignore: grecaptcha is in window.
+    grecaptcha.enterprise.ready(() => {
+      // @ts-ignore: grecaptcha is in window.
+      grecaptcha.enterprise.execute(siteKey, { action: "submit" }).then(
+        (token: string) => {
           const input = form.querySelector(
             "#g-recaptcha-response",
           ) as HTMLInputElement;
           input.value = token;
-          // Now, submit the form
           form.submit();
         },
       );
