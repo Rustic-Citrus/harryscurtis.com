@@ -1,12 +1,16 @@
+
+import ThemeToggle from "../islands/ThemeToggle.tsx";
+
 export const Navbar = () => {
   return (
-    <div class="navbar sticky top-0 bg-base-100\25 backdrop-blur-md shadow-sm z-100">
+    <div class="navbar sticky top-0 bg-base-100/75 backdrop-blur-md shadow-sm z-100">
       <div class="navbar-start">
       </div>
       <div class="navbar-center">
         <a class="text-xl">Harry Stuart Curtis</a>
       </div>
       <div class="navbar-end">
+        <ThemeToggle />
         <div class="dropdown dropdown-end">
           <div
             tabindex={0}
@@ -39,7 +43,7 @@ export const Navbar = () => {
               <a href="/posts">Posts</a>
             </li>
             <li>
-              <a href="/examples">Examples</a>
+              <a href="/about">About</a>
             </li>
             <li>
               <a href="/contact">Contact</a>
@@ -50,3 +54,4 @@ export const Navbar = () => {
     </div>
   );
 };
+
