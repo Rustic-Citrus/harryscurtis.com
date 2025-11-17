@@ -1,38 +1,26 @@
-import { useEffect, useMemo } from "preact/hooks";
 import { useSignal } from "@preact/signals";
+import { useEffect } from "preact/hooks";
 
 type Theme = "rustic" | "night";
 
 export default function ThemeToggle() {
-  const theme = useSignal<Theme | null>(null);
+  const theme = useSignal<Theme>("rustic");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme) {
-      theme.value = savedTheme;
-    } else {
-      const isDark = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches;
-      theme.value = isDark ? "night" : "rustic";
-    }
-  }, []);
-
-  useEffect(() => {
-    if (theme.value) {
-      localStorage.setItem("theme", theme.value);
-      document.documentElement.setAttribute("data-theme", theme.value);
-    }
+    globalThis.document.documentElement.setAttribute("data-theme", theme.value);
   }, [theme.value]);
 
-  const isDark = useMemo(() => theme.value === "night", [theme.value]);
-
-  const toggleTheme = () => {
-    theme.value = isDark ? "rustic" : "night";
-  };
+  function toggleTheme() {
+    theme.value = theme.value === "rustic" ? "night" : "rustic";
+  }
 
   return (
-    <button class="btn btn-circle btn-ghost" onClick={toggleTheme}>
-      {isDark
+    <button
+      class="btn btn-circle btn-ghost"
+      type="button"
+      onClick={toggleTheme}
+    >
+      {theme.value === "night"
         ? (
           <svg
             class="w-6 h-6"

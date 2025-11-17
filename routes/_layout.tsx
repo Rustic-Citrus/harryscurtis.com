@@ -1,8 +1,9 @@
 import { PageProps } from "fresh";
 import ThemeToggle from "../islands/ThemeToggle.tsx";
 import { Footer } from "../components/Footer.tsx";
+import { define } from "../utils.ts";
 
-export default function Layout({ Component }: PageProps) {
+export default define.layout(({ Component }: PageProps) => {
   return (
     <div class="flex flex-col grow">
       <div class="navbar sticky top-0 bg-base-100/75 backdrop-blur-md shadow-sm z-100">
@@ -58,4 +59,4 @@ export default function Layout({ Component }: PageProps) {
       <Footer />
     </div>
   );
-}
+});

@@ -1,22 +1,27 @@
 import { FeaturedPosts } from "../components/FeaturedPosts.tsx";
 import { Post } from "../types/index.ts";
+import { define } from "../utils.ts";
+import { Head } from "fresh/runtime";
 
 const posts: Post[] = [];
 
-export default function Home() {
+export default define.page((_ctx) => {
   return (
     <div class="flex grow flex-col lg:flex-row justify-center gap-4 *:m-5 *:flex *:flex-col *:gap-2">
+      <Head>
+        <title>Harry Curtis</title>
+      </Head>
       <div class="flex justify-center lg:max-w-1/2">
         <h1 class="text-4xl pt-10 font-bold pb-4">
-          Curtis Digital Consultancy
+          Harry Stuart Curtis
         </h1>
         <h2 class="text-2xl italic">
-          Providing consultation services on all things digital
+          Digital Consultant
         </h2>{" "}
         <p class="text-lg">
           Based in the Hay-on-Wye area, I provide consulting and support
-          services for problems related to IT, Software Engineering and Data
-          Analysis.
+          services for problems generally classified as "digital", such as IT,
+          Software Engineering and Data Analysis issues.
         </p>
         <p class="text-lg">
           With experience and professional qualifications in Software
@@ -38,4 +43,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
+});

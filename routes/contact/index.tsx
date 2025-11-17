@@ -1,5 +1,6 @@
 import { ContactForm } from "../../islands/ContactForm.tsx";
 import { define } from "../../utils.ts";
+import { Head } from "fresh/runtime";
 
 export const handler = define.handlers({
   async POST(ctx) {
@@ -52,24 +53,25 @@ export const handler = define.handlers({
     }
   },
 });
-export default define.page(() => {
+export default define.page((_ctx) => {
   const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY");
   return (
-    <>
-      <div class="md:mx-24 xl:mx-72">
-        <h1 class="text-4xl text-center pb-8 pt-4">Contact</h1>
-        <div class="chat chat-start">
-          <div class="chat-bubble bg-white/50 border border-gray-200 py-4">
-            <p>
-              Thanks for taking the time to visit the site. You can leave a
-              message using the form below.
-            </p>
-          </div>
-        </div>
-        <div class="chat chat-end">
-          <ContactForm siteKey={siteKey} />
+    <div class="flex flex-col grow md:mx-24 xl:mx-72">
+      <Head>
+        <title>Contact</title>
+      </Head>
+      <h1 class="text-4xl text-center pb-8 pt-4">Contact</h1>
+      <div class="chat chat-start">
+        <div class="chat-bubble bg-white/50 border border-gray-200 py-4">
+          <p>
+            Thanks for taking the time to visit the site. You can leave a
+            message using the form below.
+          </p>
         </div>
       </div>
-    </>
+      <div class="chat chat-end">
+        <ContactForm siteKey={siteKey} />
+      </div>
+    </div>
   );
 });

@@ -1,8 +1,13 @@
-// import data from "../../dummy/posts.json" with { type: "json" };
+import { Head } from "fresh/runtime";
 import { PostsPagination } from "../../islands/PostsPagination.tsx";
-export default function Posts() {
+import { define } from "../../utils.ts";
+
+export default define.page((_ctx) => {
   return (
-    <div class="flex flex-col gap-2">
+    <div class="flex grow flex-col gap-2">
+      <Head>
+        <title>Posts</title>
+      </Head>
       <h1 class="pt-4 text-3xl">Posts</h1>
       <label class="input">
         <svg
@@ -26,4 +31,4 @@ export default function Posts() {
       <PostsPagination />
     </div>
   );
-}
+});
