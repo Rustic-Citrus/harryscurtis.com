@@ -1,5 +1,5 @@
 import { App, staticFiles } from "fresh";
-import { Layout } from "./components/Layout.tsx";
+import Layout from "./routes/_layout.tsx";
 
 export const app = new App()
   .onError("*", (ctx) => {
