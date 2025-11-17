@@ -1,4 +1,3 @@
-
 import ThemeToggle from "../islands/ThemeToggle.tsx";
 
 export const Navbar = () => {
@@ -54,4 +53,3 @@ export const Navbar = () => {
     </div>
   );
 };
-

@@ -1,4 +1,3 @@
-
 import { Context } from "fresh";
 import { define } from "../utils.ts";
 
@@ -31,4 +30,3 @@ export default define.page((ctx: Context) => {
     </html>
   );
 });
-

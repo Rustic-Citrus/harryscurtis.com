@@ -1,4 +1,3 @@
-
 import { FeaturedPosts } from "../components/FeaturedPosts.tsx";
 import { Post } from "../types/index.ts";
 
@@ -30,8 +29,7 @@ export default function Home() {
         <p>
           If you or your business would benefit from any of these services, you
           can give me a call on 07379 555795. You can also send me a message
-          through the{" "}
-          <a href="/contact">contact page</a>.
+          through the <a href="/contact">contact page</a>.
         </p>
       </div>
       <div class="justify-center">
@@ -41,4 +39,3 @@ export default function Home() {
     </div>
   );
 }
-

@@ -11,12 +11,12 @@
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.13",
     "preact": "npm:preact@^10.27.2",
     "preact/": "https://esm.sh/preact@10.22.0/",
-    "@preact/signals": "npm:@preact/signals@^2.3.1",
+    "@preact/signals": "npm:@preact/signals@^2.3.2",
     "tailwindcss": "npm:tailwindcss@^4.1.0",
     "daisyui": "npm:daisyui@^5.1.0",
     "$std/": "https://deno.land/std@0.216.0/",
     "vite": "npm:vite@^7.1.7",
-    "fresh": "jsr:@fresh/core@^2.1.1"
+    "fresh": "jsr:@fresh/core@^2.1.4"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "nodeModulesDir": "auto"
