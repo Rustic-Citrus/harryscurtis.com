@@ -1,1 +1,2 @@
-import "./styles/tailwind.css";
+// Import CSS files here for hot module reloading to work.
+import "./assets/styles.css";

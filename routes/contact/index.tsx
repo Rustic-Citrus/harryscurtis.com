@@ -1,4 +1,4 @@
-import { ContactForm } from "../../islands/ContactForm.tsx";
+import ContactForm from "../../islands/ContactForm.tsx";
 import { define } from "../../utils.ts";
 import { Head } from "fresh/runtime";
 
@@ -6,7 +6,7 @@ export const handler = define.handlers({
   async POST(ctx) {
     const formData = await ctx.req.formData();
     const token = formData.get("g-recaptcha-response")?.toString();
-    const secretKey = Deno.env.get("RECAPTCHA_SECRET_KEY");
+    const secretKey = Deno.env.get("RECAPTCHA_SECRET_KEY") as string;
     if (!token || !secretKey) {
       return new Response("reCAPTCHA configuration error.", { status: 500 });
     }
@@ -28,6 +28,20 @@ export const handler = define.handlers({
       );
       const data = await web3formsResponse.json();
       const headers = new Headers();
+
+      if (ctx.req.headers.get("accept") === "application/json") {
+        if (data.success) {
+          return new Response(JSON.stringify({ success: true }), {
+            headers: { "Content-Type": "application/json" },
+          });
+        } else {
+          console.error("web3forms submission failed:", data);
+          return new Response(JSON.stringify({ success: false, error: "Submission failed" }), {
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+      }
+
       if (data.success) {
         headers.set("location", "/contact/success");
         return new Response(null, {
@@ -54,7 +68,7 @@ export const handler = define.handlers({
   },
 });
 export default define.page((_ctx) => {
-  const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY");
+  const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY") as string;
   return (
     <div class="flex flex-col grow md:mx-24 xl:mx-72">
       <Head>
@@ -62,7 +76,7 @@ export default define.page((_ctx) => {
       </Head>
       <h1 class="text-4xl text-center pb-8 pt-4">Contact</h1>
       <div class="chat chat-start">
-        <div class="chat-bubble bg-white/50 border border-gray-200 py-4">
+        <div class="chat-bubble py-4">
           <p>
             Thanks for taking the time to visit the site. You can leave a
             message using the form below.

@@ -1,31 +1,14 @@
 import { Head } from "fresh/runtime";
-import { InformationCard } from "../../../components/InformationCard.tsx";
 
 export default function ContactError() {
-  const bodyParagraphs = [
-    "It looks like an error occurred. The message was not sent. This may be because your behaviour was classified as 'bot-like'.",
-    "Feel free to try again, or return to the home page.",
-  ];
-  const buttons = [
-    <a class="btn btn-outline" href="/" key="1">
-      Home
-    </a>,
-    <a class="btn btn-warning btn-outline" href="/contact" key="2">
-      Try Again
-    </a>,
-  ];
-
   return (
-    <>
+    <div class="flex flex-col grow items-center justify-center">
       <Head>
         <title>Error</title>
       </Head>
-      <InformationCard
-        type="error"
-        title="Message Not Sent"
-        body={bodyParagraphs}
-        buttons={buttons}
-      />
-    </>
+      <h1 class="text-2xl font-bold text-error">Error</h1>
+      <p>Something went wrong.</p>
+      <a href="/contact" class="btn btn-primary mt-4">Try Again</a>
+    </div>
   );
 }

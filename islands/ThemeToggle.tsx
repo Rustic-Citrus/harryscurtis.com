@@ -1,14 +1,14 @@
-import { useSignal } from "@preact/signals";
-import { useEffect } from "preact/hooks";
+import { useSignal, useSignalEffect } from "@preact/signals";
 
 type Theme = "rustic" | "night";
 
 export default function ThemeToggle() {
   const theme = useSignal<Theme>("rustic");
 
-  useEffect(() => {
-    globalThis.document.documentElement.setAttribute("data-theme", theme.value);
-  }, [theme.value]);
+  useSignalEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme.value);
+    console.log("Click");
+  });
 
   function toggleTheme() {
     theme.value = theme.value === "rustic" ? "night" : "rustic";

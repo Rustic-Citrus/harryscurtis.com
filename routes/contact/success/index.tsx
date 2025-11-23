@@ -1,26 +1,14 @@
 import { Head } from "fresh/runtime";
-import { InformationCard } from "../../../components/InformationCard.tsx";
 
 export default function ContactSuccess() {
-  const body =
-    "It looks like your message was successfully sent to my inbox. I normally reply within 48 hours. Thanks for reaching out!";
-  const button = (
-    <a class="btn btn-outline" href="/">
-      Home
-    </a>
-  );
-
   return (
-    <>
+    <div class="flex flex-col grow items-center justify-center">
       <Head>
         <title>Success!</title>
       </Head>
-      <InformationCard
-        type="success"
-        title="Message Sent"
-        body={body}
-        buttons={button}
-      />
-    </>
+      <h1 class="text-2xl font-bold">Success!</h1>
+      <p>Your message has been sent.</p>
+      <a href="/" class="btn btn-primary mt-4">Go Home</a>
+    </div>
   );
 }

@@ -1,8 +1,9 @@
-
 @import "tailwindcss";
+
 @plugin "daisyui" {
 	themes: rustic --default, night --prefersdark;
 };
+
 @plugin "daisyui/theme" {
   name: "rustic";
   default: true;
@@ -28,6 +29,7 @@
   --color-warning-content: oklch(37% 0 0);
   --color-error: oklch(70% 0.191 22.216);
   --color-error-content: oklch(27% 0.033 256.848);
+  --color-bg: oklch(0.9392 0.0411 180);
   --radius-selector: 0.5rem;
   --radius-field: 0.25rem;
   --radius-box: 0.25rem;
@@ -62,6 +64,7 @@
   --color-warning: oklch(80% 0.129 101.54);
   --color-warning-content: oklch(20% 0 0);
   --color-error: oklch(60% 0.191 22.216);
+  --color-bg: oklch(0.2093 0.0489 314.19);
   --color-error-content: oklch(95% 0.033 256.848);
   --radius-selector: 0.5rem;
   --radius-field: 0.25rem;
@@ -71,6 +74,16 @@
   --border: 1px;
   --depth: 1;
   --noise: 0;
+}
+
+.fresh-gradient {
+  background-color: rgb(134, 239, 172);
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(219, 234, 254),
+    rgb(187, 247, 208),
+    rgb(254, 249, 195)
+  );
 }
 
 @theme {
@@ -88,4 +101,3 @@
     }
   }
 }
-

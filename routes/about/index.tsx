@@ -1,13 +1,7 @@
 import { define } from "../../utils.ts";
-import { Head } from "fresh/runtime";
 
-export default define.page((_ctx) => {
-  return (
-    <div class="flex flex-col grow">
-      <Head>
-        <title>About</title>
-      </Head>
-      <h1>About</h1>
-    </div>
-  );
+export default define.page(() => {
+  return <div class="flex flex-col grow md:mx-24 xl:mx-72">
+    <h1 class="text-4xl text-center pb-8 pt-4">About</h1>
+    </div>;
 });

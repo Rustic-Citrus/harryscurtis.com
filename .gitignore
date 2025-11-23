@@ -7,16 +7,7 @@
 
 # Fresh build directory
 _fresh/
-# npm dependencies
+# npm + other dependencies
 node_modules/
+vendor/
 
-GEMINI.md
-.vscode
-
-tailwindcss.exe
-
-.vscode
-
-static/styles.css
-
-dummy/
