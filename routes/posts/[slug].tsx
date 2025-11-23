@@ -9,9 +9,12 @@ export default define.page(async function BlogPost(ctx) {
   }
 
   return (
-    <div class="px-4 py-8 mx-auto max-w-3xl">
+    <div class="flex flex-col grow px-4 py-8 mx-auto md:max-w-4xl w-full">
       <div class="mb-8">
-        <a href="/posts" class="text-blue-600 hover:underline">
+        <a
+          href="/posts"
+          class="text-info-content hover:text-info hover:underline transition-colors"
+        >
           &larr; Back to Blog
         </a>
       </div>

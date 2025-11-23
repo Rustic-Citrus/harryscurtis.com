@@ -4,8 +4,6 @@ date: 2023-10-27
 snippet: This is my first blog post running on Deno Fresh!
 ---
 
-# Hello World
-
 Welcome to my new blog! This post is written in Markdown and rendered using Deno
 Fresh.
 
