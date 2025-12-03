@@ -72,16 +72,16 @@ export default function Navbar({ title }: NavbarProps) {
             class="menu menu-sm dropdown-content bg-base-100 z-101 mt-3 w-52 p-2 shadow-xl"
           >
             <li>
-              <a href="/">Homepage</a>
+              <a href="/" class="text-sm">Homepage</a>
             </li>
             <li>
-              <a href="/posts">Posts</a>
+              <a href="/posts" class="text-sm">Posts</a>
             </li>
             <li>
-              <a href="/services">Services</a>
+              <a href="/services" class="text-sm">Services</a>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <a href="/contact" class="text-sm">Contact</a>
             </li>
           </ul>
         </div>
