@@ -36,9 +36,12 @@ export const handler = define.handlers({
           });
         } else {
           console.error("web3forms submission failed:", data);
-          return new Response(JSON.stringify({ success: false, error: "Submission failed" }), {
-            headers: { "Content-Type": "application/json" },
-          });
+          return new Response(
+            JSON.stringify({ success: false, error: "Submission failed" }),
+            {
+              headers: { "Content-Type": "application/json" },
+            },
+          );
         }
       }
 
@@ -70,21 +73,29 @@ export const handler = define.handlers({
 export default define.page((_ctx) => {
   const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY") as string;
   return (
-    <div class="flex flex-col grow md:mx-24 xl:mx-72">
-      <Head>
-        <title>Contact</title>
-      </Head>
-      <h1 class="text-4xl text-center pb-8 pt-4">Contact</h1>
-      <div class="chat chat-start">
-        <div class="chat-bubble py-4">
-          <p>
-            Thanks for taking the time to visit the site. You can leave a
-            message using the form below.
-          </p>
+    <div class="flex flex-col justify-center items-center grow mx-12">
+      <div class="mockup-phone border-[#ff8938] max-md:contents my-5">
+        <div class="mockup-phone-camera max-md:hidden"></div>
+        <div class="mockup-phone-display max-md:contents">
+          <div class="flex flex-col gap-4 justify-end w-full h-full md:bg-[url(https://img.daisyui.com/images/stock/453966.webp)]">
+            <div class="chat chat-start px-1">
+              <div class="chat-bubble py-4 md:bg-green-500 md:text-white">
+                <p>Hey! Thanks for taking the time to visit the site.</p>
+              </div>
+            </div>
+            <div class="chat chat-start px-1">
+              <div class="chat-bubble py-4 md:bg-green-500 md:text-white">
+                <p>
+                  You can leave a message using the form below.
+                </p>
+              </div>
+            </div>
+            <div class="chat chat-end self-end w-full px-1">
+              <ContactForm siteKey={siteKey} />
+            </div>
+            <div class="h-24" />
+          </div>
         </div>
-      </div>
-      <div class="chat chat-end">
-        <ContactForm siteKey={siteKey} />
       </div>
     </div>
   );

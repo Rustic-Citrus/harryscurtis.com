@@ -2,7 +2,9 @@ import { useSignal } from "@preact/signals";
 
 export default function ContactForm({ siteKey }: { siteKey: string }) {
   const submitButtonContent = useSignal(<span>Send</span>);
-  const alert = useSignal<{ type: "success" | "error"; message: string } | null>(
+  const alert = useSignal<
+    { type: "success" | "error"; message: string } | null
+  >(
     null,
   );
 
@@ -64,14 +66,15 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
   return (
     <form
       method="POST"
-      class="chat-bubble lg:w-1/2 flex flex-col"
+      class="chat-bubble flex flex-col w-3/4 md:bg-neutral-100 md:text-black"
       onSubmit={onFormSubmit}
     >
       {alert.value && (
         <div
           role="alert"
-          class={`alert ${alert.value.type === "success" ? "alert-success" : "alert-error"
-            } mb-4`}
+          class={`alert ${
+            alert.value.type === "success" ? "alert-success" : "alert-error"
+          } mb-4`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -101,10 +104,10 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
         </div>
       )}
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Your name</legend>
+        <legend class="fieldset-legend md:text-black">Your name</legend>
         <input
           type="text"
-          class="input validator"
+          class="input validator bg-neutral-100 text-black border-neutral-800"
           name="name"
           placeholder="Type here"
           minLength={2}
@@ -116,10 +119,10 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
         </div>
       </fieldset>
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Your email</legend>
+        <legend class="fieldset-legend md:text-black">Your email</legend>
         <input
           type="email"
-          class="input validator"
+          class="input validator bg-neutral-100 text-black border-neutral-800"
           name="email"
           placeholder="Type here"
           required
@@ -129,9 +132,9 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
         </div>
       </fieldset>
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Your message</legend>
+        <legend class="fieldset-legend md:text-black">Your message</legend>
         <textarea
-          class="textarea validator h-24"
+          class="textarea validator h-24 bg-neutral-100 text-black border-neutral-800"
           placeholder="Message"
           name="message"
           minLength={5}
@@ -150,7 +153,7 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
       />
       <button
         type="submit"
-        class="btn btn-info text-white self-end w-full max-w-2/3 lg:max-w-1/2 my-2"
+        class="btn btn-info text-white self-end w-full max-w-2/3 my-2"
       >
         {submitButtonContent}
       </button>

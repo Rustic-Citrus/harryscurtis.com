@@ -14,8 +14,8 @@ export default define.page(function App({ Component, url }) {
     title = "Contact";
   } else if (url.pathname.startsWith("/posts")) {
     title = "Posts";
-  } else if (url.pathname.startsWith("/about")) {
-    title = "About";
+  } else if (url.pathname.startsWith("/services")) {
+    title = "Services";
   }
 
   return (
@@ -28,7 +28,7 @@ export default define.page(function App({ Component, url }) {
           defer
         >
         </script>
-        <title>new-personal-site</title>
+        <title>Harry Curtis</title>
       </head>
       <body class="flex flex-col grow min-h-screen animate-clockwise bg-radial-[at_75%_75%] from-base-100 via-base-200 to-(--color-bg) bg-size-[300%_300%]">
         <Navbar title={title} />

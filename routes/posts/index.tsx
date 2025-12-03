@@ -16,7 +16,7 @@ export default define.page(async function BlogIndex() {
                     {post.title}
                   </h2>
                   <div class="card-subtitle text-info-content mt-2">
-                    {new Date(post.date).toLocaleDateString("en-US", {
+                    {new Date(post.date).toLocaleDateString("en-GB", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",

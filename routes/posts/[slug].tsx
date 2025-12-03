@@ -1,6 +1,7 @@
 import { define } from "../../utils.ts";
 import { getPost } from "../../utils/posts.ts";
-import { render } from "@deno/gfm";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default define.page(async function BlogPost(ctx) {
   const post = await getPost(ctx.params.slug);
@@ -19,17 +20,16 @@ export default define.page(async function BlogPost(ctx) {
         </a>
       </div>
       <h1 class="text-5xl font-bold mb-4">{post.title}</h1>
-      <div class="text-gray-500 mb-8">
-        {new Date(post.date).toLocaleDateString("en-US", {
+      <div class="text-base-content mb-8">
+        {new Date(post.date).toLocaleDateString("en-GB", {
           year: "numeric",
           month: "long",
           day: "numeric",
         })}
       </div>
-      <div
-        class="markdown-body"
-        dangerouslySetInnerHTML={{ __html: render(post.content) }}
-      />
+      <Markdown className="markdown-body" remarkPlugins={[remarkGfm]}>
+        {post.content}
+      </Markdown>
     </div>
   );
 });
