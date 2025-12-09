@@ -1,6 +1,5 @@
 import ContactForm from "../../islands/ContactForm.tsx";
 import { define } from "../../utils.ts";
-import { Head } from "fresh/runtime";
 
 export const handler = define.handlers({
   async POST(ctx) {

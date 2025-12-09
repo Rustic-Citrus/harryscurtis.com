@@ -66,7 +66,7 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
   return (
     <form
       method="POST"
-      class="chat-bubble flex flex-col w-3/4 md:bg-neutral-100 md:text-black"
+      class="chat-bubble flex flex-col w-full md:w-3/4 md:bg-neutral-100 md:text-black"
       onSubmit={onFormSubmit}
     >
       {alert.value && (
