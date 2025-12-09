@@ -1,13 +1,6 @@
 import { extract } from "@std/front-matter/yaml";
 import { join } from "@std/path";
-
-export interface Post {
-  slug: string;
-  title: string;
-  date: Date;
-  content: string;
-  snippet: string;
-}
+import { Post } from "../types.ts";
 
 export async function getPosts(): Promise<Post[]> {
   const posts: Post[] = [];
@@ -35,7 +28,7 @@ export async function getPosts(): Promise<Post[]> {
 export async function getPost(slug: string): Promise<Post | null> {
   const text = await Deno.readTextFile(join(Deno.cwd(), "posts", `${slug}.md`));
   const { attrs, body } = extract<Record<string, unknown>>(text);
-  
+
   return {
     slug,
     title: String(attrs.title),
