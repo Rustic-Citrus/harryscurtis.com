@@ -4,7 +4,9 @@ export default function Footer() {
     <footer class="footer sm:footer-horizontal footer-center bg-base-100 shadow-sm p-4">
       <aside>
         <p>
-          Copyright © {year} - All rights reserved by Harry Stuart Curtis.
+          Copyright © {year}{" "}
+          . All rights reserved by Harry Stuart Curtis. All text written by
+          Harry Stuart Curtis. All content certified human.
         </p>
       </aside>
     </footer>
