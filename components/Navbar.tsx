@@ -5,10 +5,10 @@ interface NavbarProps {
 export default function Navbar({ title }: NavbarProps) {
   return (
     <div class="navbar sticky top-0 bg-base-100/75 backdrop-blur-md shadow-sm z-100">
-      <div class="navbar-start">
+      <div class="hidden sm:block sm:navbar-start">
       </div>
-      <div class="navbar-center">
-        <a class="text-xl">{title}</a>
+      <div class="navbar-start sm:navbar-center sm:justify-center">
+        <a class="text-xl text-center pl-6 sm:pl-0">{title}</a>
       </div>
       <div class="navbar-end">
         <label class="flex cursor-pointer gap-2 pr-4">
@@ -46,7 +46,7 @@ export default function Navbar({ title }: NavbarProps) {
           </svg>
         </label>
         <div class="dropdown dropdown-end pl-2">
-          Menu{" "}
+          <span class="hidden sm:inline">Menu</span>
           <div
             tabindex={0}
             role="button"

@@ -27,7 +27,10 @@ export default define.page(async function BlogPost(ctx) {
           day: "numeric",
         })}
       </div>
-      <Markdown className="markdown-body" remarkPlugins={[remarkGfm]}>
+      <Markdown
+        className="prose md:prose-lg lg:prose-xl"
+        remarkPlugins={[remarkGfm]}
+      >
         {post.content}
       </Markdown>
     </div>

@@ -8,7 +8,7 @@ export default function FeaturedPosts({ posts }: { posts: Post[] }) {
           href={`/posts/${posts[0].slug}`}
           class="hover-3d my-12 mx-2 w-full cursor-pointer"
         >
-          <div class="card border-2 border-neutral-400 glass bg-base-200 md:w-1/2 h-64">
+          <div class="card border-2 border-base-content/20 glass md:w-1/2 h-64">
             <div class="card-body w-full">
               <h2 class="card-title text-2xl font-bold group-hover:text-info transition-colors">
                 {posts[0].title}
@@ -21,7 +21,9 @@ export default function FeaturedPosts({ posts }: { posts: Post[] }) {
                 })}
               </div>
               <p class="card-text mt-4 text-info-content">
-                {posts[0].snippet}
+                {posts[0].snippet.length > 200
+                  ? posts[0].snippet.slice(0, 200) + "..."
+                  : posts[0].snippet}
               </p>
             </div>
           </div>
@@ -40,7 +42,7 @@ export default function FeaturedPosts({ posts }: { posts: Post[] }) {
         {posts.slice(1).map((post, index) => (
           <div
             key={index}
-            class="card border-2 border-neutral-400 bg-base-200 w-full h-64"
+            class="card border border-base-content/20 bg-base-100 shadow-sm hover:border-base-content/40 hover:shadow-md transition-colors w-full h-64"
           >
             <div class="card-body">
               <a href={`/posts/${post.slug}`} class="group">
@@ -55,7 +57,9 @@ export default function FeaturedPosts({ posts }: { posts: Post[] }) {
                   })}
                 </div>
                 <p class="card-text mt-4 text-info-content">
-                  {post.snippet}
+                  {post.snippet.length > 200
+                    ? post.snippet.slice(0, 200) + "..."
+                    : post.snippet}
                 </p>
               </a>
             </div>

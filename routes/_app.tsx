@@ -30,7 +30,7 @@ export default define.page(function App({ Component, url }) {
         </script>
         <title>Harry Curtis</title>
       </head>
-      <body class="flex flex-col grow min-h-screen animate-clockwise bg-radial-[at_75%_75%] from-base-100 via-base-200 to-(--color-bg) bg-size-[300%_300%]">
+      <body class="flex flex-col grow min-h-screen animate-clockwise bg-radial-[at_67%_67%] from-base-100 via-base-200 to-base-300 bg-size-[200%_200%]">
         <Navbar title={title} />
         <Component />
         <Footer />

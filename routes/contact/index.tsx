@@ -72,7 +72,7 @@ export const handler = define.handlers({
 export default define.page((_ctx) => {
   const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY") as string;
   return (
-    <div class="flex flex-col justify-center items-center grow mx-12">
+    <div class="flex flex-col justify-center items-center grow mt-4 mx-2 md:mx-12">
       <div class="mockup-phone border-[#ff8938] max-md:contents my-5">
         <div class="mockup-phone-camera max-md:hidden"></div>
         <div class="mockup-phone-display max-md:contents">
