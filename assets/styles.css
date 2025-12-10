@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 @plugin "daisyui" {
   themes: rustic --default, night --prefersdark;
 }
@@ -82,28 +84,24 @@
   --noise: 0;
 }
 
-.fresh-gradient {
-  background-color: rgb(134, 239, 172);
-  background-image: linear-gradient(
-    to right bottom,
-    rgb(219, 234, 254),
-    rgb(187, 247, 208),
-    rgb(254, 249, 195)
-  );
-}
-
 @theme {
-  --animate-clockwise: clockwise 6s ease-in-out infinite;
+  --animate-clockwise: clockwise 12s ease-in-out infinite;
 
   @keyframes clockwise {
     0% {
-      background-position: 0% 50%;
+      background-position: 50% 0%;
     }
-    50% {
+    25% {
       background-position: 100% 50%;
     }
-    100% {
+    50% {
+      background-position: 50% 100%;
+    }
+    75% {
       background-position: 0% 50%;
+    }
+    100% {
+      background-position: 50% 0%;
     }
   }
 }
