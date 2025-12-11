@@ -16,7 +16,7 @@ export default define.page(async function BlogPost(ctx) {
           href="/posts"
           class="text-info-content hover:text-info hover:underline transition-colors"
         >
-          &larr; Back to Blog
+          &larr; Back to Posts
         </a>
       </div>
       <h1 class="text-5xl font-bold mb-4">{post.title}</h1>
