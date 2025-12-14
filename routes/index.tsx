@@ -11,7 +11,7 @@ export default define.page(async function Home(_ctx) {
       <Head>
         <title>Harry Curtis</title>
       </Head>
-      <div class="flex justify-center lg:max-w-1/2">
+      <div class="flex justify-center w-full lg:w-1/3">
         <h1 class="text-4xl pt-10 font-bold pb-4">
           Harry Stuart Curtis
         </h1>
@@ -22,16 +22,58 @@ export default define.page(async function Home(_ctx) {
             <span class="text-2xl">Data Analyst</span>
           </span>
         </span>
+
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
           <input type="radio" name="homepage-accordion" />
           <div class="collapse-title font-semibold">
-            Which services do you offer?
+            Who am I?
           </div>
           <div class="collapse-content">
+            <p class="text-justify text-sm pb-2">
+              I am a self-taught tech-specialist, living and working in
+              Mid-Wales. To complement my experience, I have earned
+              qualifications in Data Analysis, the Java programming lanaguage,
+              Software Engineering, and hope to learn more in the future with a
+              Master's in Computer Science and further professional
+              certifications in specialist fields, such as IT Support. In a
+              professional context, I have had the opportunity to apply what I
+              have learned to help small businesses with their business
+              problems, such as leading an inventory and point-of-sale system
+              migration project for a large bookshop.
+            </p>
+            <p class="text-justify text-sm pb-2">
+              Until a few years ago, I was a teacher living in the South of
+              Brazil. I worked with children, teenagers, and young adults, and
+              had a fulfilling role in their development as people. There, I
+              taught myself Portuguese, earned a degree in Philosophy during the
+              Covid-19 pandemic, and met my wife, Heloísa, who has now emigrated
+              to the UK, and lives with me here, in Hay-on-Wye. When I find the
+              time, I enjoy researching my family history, of which I keep a
+              record at this domain. If you would like to view or contribute to
+              the research, you are welcome to request an account (<a
+                href="https://family.harryscurtis.com/"
+                target="_blank"
+                class="font-bold hover:text-info"
+              >
+                click here to open in a new tab
+              </a>).
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="homepage-accordion" />
+          <div class="collapse-title font-semibold">
+            How can I help?
+          </div>
+          <div class="collapse-content">
+            <p class="text-sm pb-2">
+              I can help with a broad range of technology-related challenges,
+              from complex application development projects to everyday problems
+              with mobile phones.
+            </p>
             <p class="text-sm mb-4">
-              I offer a range of computer hardware and software services,
-              including software engineering, data analysis and basic IT
-              support. For more information, click the Services button below.
+              For a more detailed description of the services which I can offer,
+              please click the Services button below.
             </p>
             <a
               href="/services"
@@ -49,12 +91,17 @@ export default define.page(async function Home(_ctx) {
         <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-2">
           <input type="radio" name="homepage-accordion" checked />
           <div class="collapse-title font-semibold">
-            Where do you provide services?
+            How far and when can I travel for technical callouts?
           </div>
           <div class="collapse-content text-sm">
-            Based out of Hay-on-Wye, I can provide face-to-face services to
-            clients in Powys, Herefordshire and Monmouthshire. For consultation
-            services, I can also provide advice over the phone or video call.
+            I live and work in Hay-on-Wye, so I can drive to any area which is
+            within a reasonable distance. That could be as far as Llandovery,
+            Ebbw Vale, Knighton or Leominster. For further afield, you are more
+            than welcome to reach out to me, and I we can discuss what you need
+            over the phone or via email, and in some cases, I may still consider
+            travelling out to you. For callouts during the day, I am available
+            within 5 working days. For callouts in the evening, I am usually
+            available within one working day.
           </div>
         </div>
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
@@ -64,9 +111,9 @@ export default define.page(async function Home(_ctx) {
           </div>
           <div class="collapse-content">
             <p class="text-sm mb-4">
-              To arrange a consultation or to enquire about my services, please
-              contact me using the contact form, accessible through the button
-              below.
+              If you would like to contact me for help with a problem or have
+              any other enquiries, please use the Contact page, which you can
+              find by clicking or tapping the "Contact" button below.
             </p>
             <a
               href="/contact"
@@ -76,13 +123,13 @@ export default define.page(async function Home(_ctx) {
                 class="btn btn-primary"
                 type="button"
               >
-                Contact Form
+                Contact
               </button>
             </a>
           </div>
         </div>
       </div>
-      <div class="flex justify-center px-5 w-full">
+      <div class="flex justify-center px-5 w-full lg:w-2/3">
         <h1 class="text-3xl font-bold">Featured Posts</h1>
         <FeaturedPosts posts={posts} />
       </div>
