@@ -6,7 +6,6 @@ export default define.page(async function BlogIndex() {
 
   return (
     <div class="flex grow flex-col items-center px-4 py-8 mx-auto w-full">
-      <h1 class="text-5xl font-bold mb-8">Posts</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <div class="card card-md shadow-sm bg-base-100 border-2 border-base-content/20 w-full hover:border-base-content/40 hover:shadow-md transition-colors max-w-md h-64">
