@@ -30,16 +30,11 @@ export default define.page(async function Home(_ctx) {
           </div>
           <div class="collapse-content">
             <p class="text-justify text-sm pb-2">
-              I am a self-taught tech-specialist, living and working in
-              Mid-Wales. To complement my experience, I have earned
-              qualifications in Data Analysis, the Java programming lanaguage,
-              Software Engineering, and hope to learn more in the future with a
-              Master's in Computer Science and further professional
-              certifications in specialist fields, such as IT Support. In a
-              professional context, I have had the opportunity to apply what I
-              have learned to help small businesses with their business
-              problems, such as leading an inventory and point-of-sale system
-              migration project for a large bookshop.
+              I am a self-taught tech specialist based in Mid-Wales, with
+              qualifications and experience in Data Analysis, the Java
+              programming language, and Software Engineering. My professional
+              focus is on helping small businesses, such as managing the
+              migration of an inventory and point-of-sale system.
             </p>
             <p class="text-justify text-sm pb-2">
               Until a few years ago, I was a teacher living in the South of
