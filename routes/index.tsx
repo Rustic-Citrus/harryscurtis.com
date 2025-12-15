@@ -53,7 +53,7 @@ export default define.page(async function Home(_ctx) {
               the research, you are welcome to request an account (<a
                 href="https://family.harryscurtis.com/"
                 target="_blank"
-                class="font-bold hover:text-info"
+                class="text-info"
               >
                 click here to open in a new tab
               </a>).
@@ -77,10 +77,10 @@ export default define.page(async function Home(_ctx) {
             </p>
             <a
               href="/services"
-              class="flex justify-end hover:cursor-pointer"
+              class="flex justify-start hover:cursor-pointer"
             >
               <button
-                class="btn btn-primary"
+                class="btn btn-outline text-base hover:btn-info hover:text-white"
                 type="button"
               >
                 Services
@@ -117,10 +117,10 @@ export default define.page(async function Home(_ctx) {
             </p>
             <a
               href="/contact"
-              class="flex justify-end hover:cursor-pointer"
+              class="flex justify-start hover:cursor-pointer"
             >
               <button
-                class="btn btn-primary"
+                class="btn btn-outline text-base hover:btn-info hover:text-white"
                 type="button"
               >
                 Contact
