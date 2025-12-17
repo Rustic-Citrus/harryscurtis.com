@@ -1,6 +1,6 @@
 import { define } from "../utils.ts";
 import { Head } from "fresh/runtime";
-import FeaturedPosts from "../islands/FeaturedPosts.tsx";
+import FeaturedPosts from "../components/FeaturedPosts.tsx";
 import { getPosts } from "../utils/posts.ts";
 
 export default define.page(async function Home(_ctx) {
