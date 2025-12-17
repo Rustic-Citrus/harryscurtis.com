@@ -13,14 +13,14 @@ export default function FeaturedPosts({ posts }: { posts: Post[] }) {
             <h2 class="card-title text-2xl font-bold transition-colors">
               {posts[0].title}
             </h2>
-            <div class="card-subtitle text-info-content mt-2">
+            <div class="card-subtitle text-base mt-2">
               {new Date(posts[0].date).toLocaleDateString("en-GB", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })}
             </div>
-            <p class="card-text mt-4 text-info-content">
+            <p class="card-text mt-4 text-base">
               {posts[0].snippet.length > 200
                 ? posts[0].snippet.slice(0, 200) + "..."
                 : posts[0].snippet}
@@ -48,14 +48,14 @@ export default function FeaturedPosts({ posts }: { posts: Post[] }) {
                 <h2 class="card-title text-2xl font-bold group-hover:text-info transition-colors">
                   {post.title}
                 </h2>
-                <div class="card-subtitle text-info-content mt-2">
+                <div class="card-subtitle text-base mt-2">
                   {new Date(post.date).toLocaleDateString("en-GB", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
                   })}
                 </div>
-                <p class="card-text mt-4 text-info-content">
+                <p class="card-text mt-4 text-base">
                   {post.snippet.length > 200
                     ? post.snippet.slice(0, 200) + "..."
                     : post.snippet}

@@ -23,7 +23,7 @@ export default define.page(async function Home(_ctx) {
           </span>
         </span>
 
-        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-colors">
           <input type="radio" name="homepage-accordion" />
           <div class="collapse-title font-semibold">
             Who am I?
@@ -66,7 +66,7 @@ export default define.page(async function Home(_ctx) {
             </a>
           </div>
         </div>
-        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-color">
           <input type="radio" name="homepage-accordion" />
           <div class="collapse-title font-semibold">
             How can I help?
@@ -94,7 +94,7 @@ export default define.page(async function Home(_ctx) {
             </a>
           </div>
         </div>
-        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-colors">
           <input type="radio" name="homepage-accordion" />
           <div class="collapse-title font-semibold">
             How can I contact you?
