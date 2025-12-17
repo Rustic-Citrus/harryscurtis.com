@@ -32,10 +32,11 @@ export default define.page(async function Home(_ctx) {
             <p class="text-justify text-sm pb-2">
               I am a self-taught tech specialist based in Mid-Wales, with
               qualifications and experience in Software Engineering, Data
-              Analysis, the Java programming language, as well as other
+              Analysis, the Java programming language, and a range of other
               technical skills. My professional focus is to help ordinary people
-              and small businesses make big changes, such as managing the
-              migration of an inventory and point-of-sale system.
+              and small businesses with change, such as managing the migration
+              of an inventory and point-of-sale system or to find the right
+              software and hardware for your requirements.
             </p>
             <p class="text-justify text-sm pb-2">
               Before I decided to become a Software Engineer, I taught English
@@ -93,22 +94,6 @@ export default define.page(async function Home(_ctx) {
             </a>
           </div>
         </div>
-        <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-2">
-          <input type="radio" name="homepage-accordion" checked />
-          <div class="collapse-title font-semibold">
-            How far and when can I travel for technical callouts?
-          </div>
-          <div class="collapse-content text-sm">
-            I live and work in Hay-on-Wye, so I can drive to any area which is
-            within a reasonable distance. That could be as far as Llandovery,
-            Ebbw Vale, Knighton or Leominster. For further afield, you are more
-            than welcome to reach out to me, and I we can discuss what you need
-            over the phone or via email, and in some cases, I may still consider
-            travelling out to you. For callouts during the day, I am available
-            within 5 working days. For callouts in the evening, I am usually
-            available within one working day.
-          </div>
-        </div>
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
           <input type="radio" name="homepage-accordion" />
           <div class="collapse-title font-semibold">
@@ -116,9 +101,9 @@ export default define.page(async function Home(_ctx) {
           </div>
           <div class="collapse-content">
             <p class="text-sm mb-4">
-              If you would like to contact me for help with a problem or have
-              any other enquiries, please use the Contact page, which you can
-              find by clicking or tapping the "Contact" button below.
+              If you would like to contact me for help with a problem or if you
+              have any other enquiries, please use the Contact page, which you
+              can find by clicking or tapping the button below.
             </p>
             <a
               href="/contact"
