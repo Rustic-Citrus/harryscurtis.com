@@ -31,28 +31,38 @@ export default define.page(async function Home(_ctx) {
           <div class="collapse-content">
             <p class="text-justify text-sm pb-2">
               I am a self-taught tech specialist based in Mid-Wales, with
-              qualifications and experience in Data Analysis, the Java
-              programming language, and Software Engineering. My professional
-              focus is on helping small businesses, such as managing the
+              qualifications and experience in Software Engineering, Data
+              Analysis, the Java programming language, as well as other
+              technical skills. My professional focus is to help ordinary people
+              and small businesses make big changes, such as managing the
               migration of an inventory and point-of-sale system.
             </p>
             <p class="text-justify text-sm pb-2">
-              Until a few years ago, I was a teacher living in the South of
-              Brazil. I worked with children, teenagers, and young adults, and
-              had a fulfilling role in their development as people. There, I
-              taught myself Portuguese, earned a degree in Philosophy during the
-              Covid-19 pandemic, and met my wife, Heloísa, who has now emigrated
-              to the UK, and lives with me here, in Hay-on-Wye. When I find the
-              time, I enjoy researching my family history, of which I keep a
-              record at this domain. If you would like to view or contribute to
-              the research, you are welcome to request an account (<a
-                href="https://family.harryscurtis.com/"
-                target="_blank"
-                class="text-info"
-              >
-                click here to open in a new tab
-              </a>).
+              Before I decided to become a Software Engineer, I taught English
+              in the South of Brazil. I worked with children, teenagers, and
+              young adults, and had a fulfilling role in their development as
+              people. I taught myself Portuguese, earned a degree in Philosophy
+              during the Covid-19 pandemic, and met my wife, Heloísa, who has
+              now emigrated to the UK, and lives with me here, in Hay-on-Wye.
             </p>
+            <p class="text-justify text-sm pb-2">
+              When I find the time, I research local and family history, of
+              which I keep a record at the domain{" "}
+              <em>family.harryscurtis.com</em>. If you would like to view or
+              contribute to the research, you are welcome to request an account
+            </p>
+            <a
+              href="https://family.harryscurtis.com/"
+              target="_blank"
+              class="flex justify-start hover:cursor-pointer"
+            >
+              <button
+                type="button"
+                class="btn btn-outline text-base hover:btn-info hover:text-white"
+              >
+                Family History Research
+              </button>
+            </a>
           </div>
         </div>
         <div class="collapse collapse-plus bg-base-100 border border-base-300">
