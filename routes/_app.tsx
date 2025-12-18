@@ -4,7 +4,7 @@ import "../assets/styles.css";
 import Footer from "../components/Footer.tsx";
 import Navbar from "../components/Navbar.tsx";
 
-export default define.page(function App({ Component, url }) {
+export default define.page(function App({ Component, url, state }) {
   const RECAPTCHA_SITE_KEY = Deno.env.get("RECAPTCHA_SITE_KEY");
 
   // NOTE: getNavbarTitle assumes first item in routes is single word string,
@@ -21,7 +21,7 @@ export default define.page(function App({ Component, url }) {
     : getNavbarTitle(url.pathname);
 
   return (
-    <html data-theme="rustic">
+    <html data-theme={state.theme}>
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,7 +33,7 @@ export default define.page(function App({ Component, url }) {
         <title>Harry Curtis</title>
       </head>
       <body class="flex flex-col grow min-h-screen animate-clockwise bg-radial-[at_67%_67%] from-base-100 via-base-200 to-base-300 bg-size-[200%_200%]">
-        <Navbar title={navbarTitle} />
+        <Navbar title={navbarTitle} theme={state.theme} />
         <Component />
         <Footer />
       </body>

@@ -1,8 +1,9 @@
 interface NavbarProps {
   title: string;
+  theme: "rustic" | "night";
 }
 
-export default function Navbar({ title }: NavbarProps) {
+export default function Navbar({ title, theme }: NavbarProps) {
   return (
     <div class="navbar sticky top-0 bg-base-100/75 backdrop-blur-md shadow-sm z-100">
       <div class="hidden sm:block sm:navbar-start">
@@ -26,11 +27,21 @@ export default function Navbar({ title }: NavbarProps) {
             <circle cx="12" cy="12" r="5" />
             <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
           </svg>
-          <input
-            type="checkbox"
-            value="night"
-            class="toggle theme-controller"
-          />
+          <a
+            href="/api/theme"
+            data-fresh-disable-lock
+            class="inline-block"
+            aria-label="Toggle Night Mode"
+          >
+            <input
+              type="checkbox"
+              class="toggle theme-controller pointer-events-none"
+              checked={theme === "night"}
+              value="night"
+              tabIndex={-1}
+              readOnly
+            />
+          </a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
