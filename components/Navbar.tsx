@@ -30,12 +30,12 @@ export default function Navbar({ title, theme }: NavbarProps) {
           <a
             href="/api/theme"
             data-fresh-disable-lock
-            class="inline-block"
+            class="flex"
             aria-label="Toggle Night Mode"
           >
             <input
               type="checkbox"
-              class="toggle theme-controller pointer-events-none"
+              class="toggle theme-controller pointer-events-none self-center"
               checked={theme === "night"}
               value="night"
               tabIndex={-1}

@@ -4,8 +4,8 @@ import { getCookies, setCookie } from "@std/http/cookie";
 export const handler = define.handlers({
   GET(ctx) {
     const cookies = getCookies(ctx.req.headers);
-    const currentTheme = cookies.theme || "rustic";
-    const newTheme = currentTheme === "rustic" ? "night" : "rustic";
+    const savedTheme = cookies.theme;
+    const newTheme = savedTheme === "rustic" ? "night" : "rustic";
     const headers = new Headers();
 
     setCookie(headers, {
