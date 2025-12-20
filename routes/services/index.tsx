@@ -2,7 +2,7 @@ import { define } from "../../utils.ts";
 
 export default define.page(() => {
   return (
-    <div class="flex flex-col lg:flex-row justify-center items-center gap-4 px-6">
+    <div class="flex flex-col lg:flex-row justify-center items-center gap-4 px-6 my-6">
       <div class="card flex-col w-5/6 bg-base-200 border border-base-content/50 transition-colors shadow-md mx-4 lg:w-full lg:mx-0 lg:max-w-3/4 lg:min-h-xl">
         <figure class="max-h-64">
           <img
