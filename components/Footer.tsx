@@ -1,13 +1,19 @@
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer class="footer sm:footer-horizontal footer-center bg-base-100 shadow-sm p-4">
+    <footer class="footer footer-horizontal footer-center bg-base-100 shadow-sm p-4 grow">
+      <nav class="grid grid-flow-col gap-6">
+        <a href="/" class="link link-hover">Home</a>
+        <a href="/services" class="link link-hover">Services</a>
+        <a href="/posts" class="link link-hover">Posts</a>
+        <a href="/contact" class="link link-hover">Contact</a>
+      </nav>
       <aside>
         <p>
-          All content on this site was created by Harry Stuart Curtis unless
-          otherwise stated. Any content produced by other authors either
-          contains an appropriate citation to the original source or credits the
-          author of the content.
+          All the content present on this website is the sole creation of Harry
+          Stuart Curtis, unless otherwise stated. Any content produced by other
+          authors either contains an appropriate citation to the original source
+          and credits the author of the content.
         </p>
         <p>
           Copyright ©{" "}
