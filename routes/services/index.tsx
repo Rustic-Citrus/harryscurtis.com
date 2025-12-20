@@ -2,7 +2,7 @@ import { define } from "../../utils.ts";
 
 export default define.page(() => {
   return (
-    <div class="flex flex-col justify-center items-center min-h-screen gap-4 mb-12 mt-6 lg:py-12 lg:gap-24">
+    <div class="flex flex-row justify-center items-center gap-4 mb-12 mt-6 lg:py-12 lg:gap-24">
       <div class="card flex-col sm:flex-row w-5/6 sm:w-full glass shadow-md mx-2 sm:mx-0 sm:max-w-3xl sm:min-h-xl">
         <figure class="max-h-1/3 sm:max-h-full sm:w-1/2">
           <img
