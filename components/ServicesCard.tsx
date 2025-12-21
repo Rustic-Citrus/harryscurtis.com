@@ -4,11 +4,10 @@ interface ServicesCardProps {
   imageTitle: string;
   cardTitle: string;
   cardBodyText: string;
-  cardListItems: string[];
 }
 
 export default function ServicesCard(
-  { imageUrl, imageAlt, imageTitle, cardTitle, cardBodyText, cardListItems }:
+  { imageUrl, imageAlt, imageTitle, cardTitle, cardBodyText }:
     ServicesCardProps,
 ) {
   return (
@@ -24,11 +23,6 @@ export default function ServicesCard(
       <div class="card-body">
         <h2 class="card-title text-3xl">{cardTitle}</h2>
         <p class="py-2 text-lg">{cardBodyText}</p>
-        <ul class="list-inside list-disc">
-          {cardListItems.map((cardListItem, index) => (
-            <li key={index}>{cardListItem}</li>
-          ))}
-        </ul>
       </div>
     </div>
   );

@@ -8,13 +8,8 @@ export default define.page(() => {
         imageUrl="mohammad-rahmani-oXlXu2qukGE-unsplash.jpg"
         imageAlt="A photo of a computer monitor with lines of code on the screen."
         imageTitle="Photo by Mohammad Rahmani on Unsplash"
-        cardTitle="Software Engineering Projects"
-        cardBodyText="Software engineering means the design and development of applications. It necessarily involves a substantial amount of communication with the client to understand their needs, followed by the planning, and execution of the project. Requisitioning a software developer is most useful when you can't find the software to meet your specific requirements."
-        cardListItems={[
-          "An inventory database and management application for a second-hand bookshop.",
-          "A bespoke online forum for a community.",
-          "A website with an online shop for a clothes retailer.",
-        ]}
+        cardTitle="Software Development"
+        cardBodyText="As a Software Engineer, I have a strong understanding of best design principles, and have designed a number of applications from the ground up, including this website, and an application to assist English teachers plan their lessons. With the rate of technological advancement seeming to accelerate every day, many businesses are at risk of being left behind if they don't have the right digital tools to carry out their work. But with the right software, your business can take advantage of these enormous changes that are happening and grow with the technology, rather than in spite of it."
       />
       <ServicesCard
         imageUrl="daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg"
@@ -22,23 +17,13 @@ export default define.page(() => {
         imageTitle=""
         cardTitle="Digital Transformation Projects"
         cardBodyText="Digital transformation is the process of converting analogue into digital systems. Often, this involves making procedural tasks automated, saving you and your business time."
-        cardListItems={[
-          "",
-          "",
-          "",
-        ]}
       />
       <ServicesCard
         imageUrl="freestocks-I_pOqP6kCOI-unsplash.jpg"
         imageAlt="Photo by freestocks on Unsplash"
         imageTitle=""
-        cardTitle="Digital Transformation Projects"
-        cardBodyText="Digital transformation is the process of converting analogue into digital systems. Often, this involves making procedural tasks automated, saving you and your business time."
-        cardListItems={[
-          "",
-          "",
-          "",
-        ]}
+        cardTitle="Mentoring"
+        cardBodyText=""
       />
     </div>
   );
