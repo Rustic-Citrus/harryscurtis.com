@@ -1,34 +1,34 @@
-export default function ServicesCard() {
+interface ServicesCardProps {
+  imageUrl: string;
+  imageAlt: string;
+  imageTitle: string;
+  cardTitle: string;
+  cardBodyText: string;
+  cardListItems: string[];
+}
+
+export default function ServicesCard(
+  { imageUrl, imageAlt, imageTitle, cardTitle, cardBodyText, cardListItems }:
+    ServicesCardProps,
+) {
   return (
-    <div class="card flex-col w-5/6 bg-base-200 border border-base-content/50 transition-colors shadow-md mx-4 lg:w-full lg:mx-0 lg:max-w-3/4 lg:min-h-xl">
+    <div class="card flex-col w-5/6 min-h-160 bg-base-200 border border-base-content/50 transition-colors shadow-md mx-4 lg:w-full lg:mx-0 lg:max-w-3/4 lg:min-h-xl">
       <figure class="max-h-64">
         <img
-          src="mohammad-rahmani-oXlXu2qukGE-unsplash.jpg"
+          src={imageUrl}
           class="object-none shadow-lg opacity-50"
-          alt="Photo by Mohammad Rahmani on Unsplash"
-          title="Photo by Mohammad Rahmani on Unsplash"
+          alt={imageAlt}
+          title={imageTitle}
         />
       </figure>
       <div class="card-body">
-        <h2 class="card-title text-3xl">Software Engineering Projects</h2>
-        <p class="py-2 text-lg">
-          Software engineering means the design and development of applications.
-          It necessarily involves a substantial amount of communication with the
-          client to understand their needs, followed by the planning, and
-          execution of the project. Requisitioning a software developer is most
-          useful when you can't find the software to meet your specific
-          requirements.
-        </p>
+        <h2 class="card-title text-3xl">{cardTitle}</h2>
+        <p class="py-2 text-lg">{cardBodyText}</p>
         <ul class="list-inside list-disc">
-          <li>
-            An inventory database and management application for a second-hand
-            bookshop.
-          </li>
-          <li>A bespoke online forum for a community.</li>
-          <li>A website with an online shop for a clothes retailer.</li>
+          {cardListItems.map((cardListItem, index) => (
+            <li key={index}>{cardListItem}</li>
+          ))}
         </ul>
-        <div class="card-actions justify-end">
-        </div>
       </div>
     </div>
   );
