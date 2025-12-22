@@ -27,12 +27,13 @@ export default define.page(async function BlogPost(ctx) {
           day: "numeric",
         })}
       </div>
-      <Markdown
-        className="prose md:prose-lg lg:prose-xl"
-        remarkPlugins={[remarkGfm]}
-      >
-        {post.content}
-      </Markdown>
+      <div class="prose md:prose-lg">
+        <Markdown
+          remarkPlugins={[remarkGfm]}
+        >
+          {post.content}
+        </Markdown>
+      </div>
     </div>
   );
 });
