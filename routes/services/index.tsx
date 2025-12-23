@@ -4,7 +4,7 @@ import ServicesCard from "../../components/ServicesCard.tsx";
 export default define.page(() => {
   return (
     <>
-      <div class="flex flex-col justify-center items-center gap-8 px-8 my-8 lg:flex-row">
+      <div class="flex flex-col justify-center items-center gap-8 px-8 my-8 xl:flex-row xl:items-stretch xl:h-full">
         <ServicesCard
           imageUrl="mohammad-rahmani-oXlXu2qukGE-unsplash.jpg"
           imageAlt="A photo of a computer monitor with lines of code on the screen."
