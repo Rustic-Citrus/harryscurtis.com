@@ -1,10 +1,11 @@
 import { define } from "../../utils.ts";
 import ServicesCard from "../../components/ServicesCard.tsx";
+import CertificationBadge from "../../components/CertificationBadge.tsx";
 
 export default define.page(() => {
   return (
-    <>
-      <div class="flex flex-col justify-center items-center gap-8 px-8 my-8 xl:flex-row xl:items-stretch xl:h-full">
+    <div class="flex flex-col justify-around mx-2 md:mx-0 *:mt-8 md:flex-row xl:flex-col xl:justify-center">
+      <div class="flex flex-col justify-center items-center gap-4 md:mx-4 xl:gap-8 xl:flex-row xl:items-stretch xl:h-full">
         <ServicesCard
           imageUrl="mohammad-rahmani-oXlXu2qukGE-unsplash.jpg"
           imageAlt="A photo of a computer monitor with lines of code on the screen."
@@ -27,13 +28,26 @@ export default define.page(() => {
           cardBodyText="With over 7 years of experience as a teacher, I have helped hundreds of people of all ages bridge the knowledge gap between where they were and where they wanted to be. Learning a new tool or skill can be the key to boosting your career or obtaining that qualification, but without guidance, it can feel like an unsurmountable task. As a teacher, I can help you learn, no matter the subject area."
         />
       </div>
-      <div class="flex justify-center mb-6">
-        <a href="/contact">
-          <button type="button" class="btn btn-lg btn-accent">
-            Get in Contact
-          </button>
-        </a>
+      <div class="flex h-full pb-4 justify-center items-center align-middle gap-2 md:flex-col md:gap-8 xl:flex-row lg:pb-8">
+        <CertificationBadge
+          imageSrc="digital-futures-academy-engineer-badge.png"
+          imageAlt="The Digital Futures Academy Certificate of Completion badge."
+          certificationLink="digital-futures-certificate.pdf"
+          certificationName="Digital Futures Software Engineering Academy"
+        />
+        <CertificationBadge
+          imageSrc="java-associate-foundations-badge.png"
+          imageAlt="The Oracle Java Foundations Associate certification badge."
+          certificationLink="oracle-foundations-associate-certification.pdf"
+          certificationName="Oracle Certified Java Foundations Associate"
+        />
+        <CertificationBadge
+          imageSrc="google-data-analytics-badge.png"
+          imageAlt="A badge showing Harry's Google Data Analytics Professional Certification."
+          certificationLink="google-data-analytics-certification.pdf"
+          certificationName="Google Data Analytics Professional"
+        />
       </div>
-    </>
+    </div>
   );
 });

@@ -11,7 +11,7 @@ export default function ServicesCard(
     ServicesCardProps,
 ) {
   return (
-    <div class="card flex-col flex-1 w-3/4 sm:w-1/2 xl:w-full image-full border border-base-content/50 transition-colors shadow-md mx-4">
+    <div class="card flex-col flex-1 max-w-xl image-full border border-base-content/50 transition-colors shadow-lg">
       <figure>
         <img
           src={imageUrl}
