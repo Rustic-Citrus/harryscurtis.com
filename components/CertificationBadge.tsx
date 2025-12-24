@@ -17,7 +17,7 @@ export default function CertificationBadge(
         title={`Download a copy of Harry's ${certificationName} certification.`}
         download
       >
-        <img src={imageSrc} alt={imageAlt} />
+        <img src={imageSrc} alt={imageAlt} class="grayscale-75" />
       </a>
     </div>
   );

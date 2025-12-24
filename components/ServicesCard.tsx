@@ -15,7 +15,10 @@ export default function ServicesCard(
         </p>
         <div class="card-actions justify-end">
           <a href="/contact" class="hover:cursor-pointer">
-            <button type="button" class="btn btn-lg btn-soft hover:btn-accent">
+            <button
+              type="button"
+              class="btn btn-lg btn-soft hover:btn-info hover:text-white"
+            >
               Find Out More
             </button>
           </a>
