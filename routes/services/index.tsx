@@ -11,14 +11,14 @@ export default define.page(() => {
           imageAlt="A photo of a computer monitor with lines of code on the screen."
           imageTitle="Photo by Mohammad Rahmani on Unsplash"
           cardTitle="Software Development"
-          cardBodyText="I am a Software Engineer with a strong understanding of best design principles, and several projects under my belt. With the rate of technological advancement accelerating every day, there is a widening competitive gap between businesses that embrace and businesses that resist the change. By providing the right software, I can help your business navigate these technological shifts, and grow with them, rather than in spite of them."
+          cardBodyText="Robust, elegant design, the core of software engineering, lies at the heart of what I build. As the rate of technological advancement accelerates every day, the competitive gap between businesses that embrace and businesses that resist change widens. Software development bridges that gulf. While your business navigates these technological shifts, my work is to build a solution that ensures you stay ahead of the curve."
         />
         <ServicesCard
           imageUrl="daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg"
           imageAlt="A photo of a whiteboard with sticky notes."
           imageTitle="Photo by Daria Nepriakhina on Unsplash"
           cardTitle="Digital Transformation"
-          cardBodyText="I have professional experience helping businesses make the change to digital systems. It can seem overwhelming to overhaul the analogue systems that businesses inherit, but the longer they're there, the more the inefficiency costs over time. Sometimes, finding the solution for your business can be as simple as getting a fresh perspective, and that's where I can help."
+          cardBodyText="Bridging the digital divide is the essence of my professional work. Overhauling the analogue systems that businesses inherit seems overwhelming, but the longer they linger, the more the inefficiency accrues over time. Digital transformation provides the answer. Sometimes, finding the solution for your business is as simple as getting a fresh perspective, and that's where I facilitate the transition."
         />
         <ServicesCard
           imageUrl="kenny-eliason-y_6rqStQBYQ-unsplash.jpg"
