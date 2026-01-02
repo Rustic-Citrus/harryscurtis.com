@@ -5,53 +5,76 @@ import CertificationBadge from "../../components/CertificationBadge.tsx";
 export default define.page(() => {
   return (
     <div class="flex flex-col justify-center mx-2 md:mx-0 *:mt-8 md:mb-6 md:flex-row xl:flex-col xl:justify-center">
-      <div class="text-center self-center xl:max-w-3/4">
+      <div class="text-justify self-center mx-2 xl:max-w-3/4">
         <h2 class="text-4xl font-semibold mb-6">Bridging the Digital Divide</h2>
-        <p class="text-lg mb-2">
+        <p class="text-lg mb-4">
           Technology is advancing at a frighteningly fast pace. Artificial
-          intelligence, 5G, Making Tax Digital and a whole range of changes are
-          making a lot of people anxious, and many are getting left behind.
+          intelligence, 5G, Making Tax Digital, as well as a whole range of
+          other changes are causing many people a great deal of anxiety.
+          Consequently, many are not benefitting from these advancements.
         </p>
-        <p class="text-lg mb-2">
-          In Powys and Herefordshire, rural communities, large families, and the
-          elderly are struggling to keep up with new technological government
-          services. Worst of all, people in the countryside often feel ignored
-          as governments and big businesses seem to spend most of their time
-          talking about urban areas and urban problems. But how do you sign up
-          for an online government service if you don't have an email address?
-          How do you attend an online class when your brother and sister are
-          next door using up the bandwidth for their classes? How do you promote
-          your business on social media when you've never used Facebook or
-          Instagram before?
+        <p class="text-lg mb-4">
+          This is known as the <strong>Digital Divide</strong>.
         </p>
-        <p class="text-lg mb-2">
-          I want to change that. I think that everyone should benefit from the
-          products of technology, not just the wealthy, the young, and people in
-          cities. With extensive experience as a teacher and several credentials
-          in areas of technology such as software engineering and data analysis,
-          I'm on a mission to help those left out by the digital divide.
+        <div class="collapse collapse-plus mb-4 bg-base-100 border border-base-300">
+          <input type="radio" name="local-info-accordion" checked={false} />
+          <div class="collapse-title font-semibold">
+            How does the Digital Divide affect Powys and Herefordshire?
+          </div>
+          <div class="collapse-content text-sm">
+            <p>
+              Rural communities and the elderly often struggle the most to keep
+              pace with changes to online governmental services. In Powys and
+              Herefordshire, these groups make up a significant proportion of
+              the population. While these improvements usually decrease public
+              spending, the real cost is passed on to the members of the public
+              in the form of a learning curve. That learning curve is too steep
+              for some, and unwanted by others.
+            </p>
+          </div>
+        </div>
+        <p class="text-lg mb-4">
+          I want to change that. I'm passionate about technology, but I think
+          that everyone should benefit from its products, not just the wealthy,
+          the young, and people in cities. With the technical aptitude and
+          extensive experience as a teacher, I'm on a mission to bridge the
+          Digital Divide.
         </p>
-        <p class="text-lg mb-2">
-          If you're someone who feels anxious or underconfident when it comes to
-          technology, then get in touch and we'll see how I can help.
+        <p class="text-lg mb-4">
+          If you feel anxious or underconfident about technology, or have been
+          affected by a recent change in technology, get in touch and we'll work
+          through the problem together.
         </p>
-        <a href="/contact" class="hover:cursor-pointer">
-          <button
-            type="button"
-            class="btn btn-wide btn-neutral btn-lg my-2 hover:btn-info"
+        <div class="flex flex-col items-center">
+          <a href="/contact" class="w-full hover:cursor-pointer sm:btn-wide">
+            <button
+              type="button"
+              class="btn btn-neutral w-full btn-lg my-2 hover:btn-info sm:btn-wide"
+            >
+              ✉️ Send a Message
+            </button>
+          </a>
+          <a
+            href="tel:+44-1497-543795"
+            class="w-full hover:cursor-pointer sm:btn-wide"
           >
-            Get in Touch
-          </button>
-        </a>
+            <button
+              type="button"
+              class="btn btn-neutral btn-lg w-full my-2 hover:btn-info sm:btn-wide"
+            >
+              ☎️ Call
+            </button>
+          </a>
+        </div>
       </div>
       <div class="flex flex-col justify-center items-center gap-4 md:mx-4 xl:gap-8 xl:flex-row xl:items-stretch xl:h-full">
         <ServicesCard
           cardTitle="Grow Your Business"
-          cardBodyText="Process automation and software have made businesses more profitable and more efficient."
+          cardBodyText="The Digital Divide doesn't just affect people, it impacts businesses, too. Process automation and software have made large companies more profitable and efficient, but small-to-medium businesses can struggle to adapt. If you're reading this, and you're a business owner who can relate to this, send me a message using the form above or give me a call."
         />
         <ServicesCard
           cardTitle="Get Connected"
-          cardBodyText="Bridging the digital divide is the essence of my professional work. Overhauling the analogue systems that businesses inherit seems overwhelming, but the longer they linger, the more the inefficiency accrues over time. Digital transformation provides the answer. Sometimes, finding the solution for your business is as simple as getting a fresh perspective, and that's where I facilitate the transition."
+          cardBodyText="Overhauling the analogue systems that businesses inherit seems overwhelming, but the longer they linger, the more the inefficiency accrues over time. Digital transformation provides the answer. Sometimes, finding the solution for your business is as simple as getting a fresh perspective, and that's where I facilitate the transition."
         />
         <ServicesCard
           cardTitle="Learn How to Adapt"

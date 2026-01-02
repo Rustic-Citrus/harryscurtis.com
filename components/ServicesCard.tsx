@@ -13,16 +13,6 @@ export default function ServicesCard(
         <p class="py-2 text-base text-justify leading-6 sm:leading-8 sm:text-lg">
           {cardBodyText}
         </p>
-        <div class="card-actions justify-end">
-          <a href="/contact" class="hover:cursor-pointer">
-            <button
-              type="button"
-              class="btn btn-lg btn-soft hover:btn-info hover:text-white"
-            >
-              Find Out More
-            </button>
-          </a>
-        </div>
       </div>
     </div>
   );
