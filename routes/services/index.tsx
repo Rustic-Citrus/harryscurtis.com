@@ -4,7 +4,7 @@ import CertificationBadge from "../../components/CertificationBadge.tsx";
 
 export default define.page(() => {
   return (
-    <div class="flex flex-col justify-center mx-2 md:mx-0 *:mt-8 md:mb-6 md:flex-row xl:flex-col xl:justify-center">
+    <div class="flex flex-col justify-center mx-2 *:mt-8 md:mb-6 xl:flex-col xl:justify-center">
       <div class="text-justify self-center mx-2 xl:max-w-3/4">
         <h2 class="text-4xl font-semibold mb-6">Bridging the Digital Divide</h2>
         <p class="text-lg mb-4">
@@ -81,7 +81,7 @@ export default define.page(() => {
           cardBodyText="With over 7 years of experience as a teacher, I have helped hundreds of people of all ages bridge the knowledge gap between where they were and where they wanted to be. Learning a new tool or skill can be the key to boosting your career or obtaining that qualification, but without guidance, it can feel like an unsurmountable task. As a teacher, I can help you learn, no matter the subject area."
         />
       </div>
-      <div class="flex h-full pb-4 justify-center items-center align-middle gap-2 md:flex-col md:gap-8 md:ml-8 xl:ml-0 xl:flex-row lg:pb-8">
+      <div class="flex flex-col h-full pb-4 justify-center items-center align-middle gap-2 md:gap-8 md:ml-8 xl:ml-0 lg:pb-8">
         <CertificationBadge
           imageSrc="digital-futures-academy-engineer-badge.png"
           imageAlt="The Digital Futures Academy Certificate of Completion badge."
@@ -99,6 +99,12 @@ export default define.page(() => {
           imageAlt="A badge showing Harry's Google Data Analytics Professional Certification."
           certificationLink="google-data-analytics-certification.pdf"
           certificationName="Google Data Analytics Professional"
+        />
+        <CertificationBadge
+          imageSrc="ibm-agile-explorer-badge.png"
+          imageAlt="A badge showing Harry's IBM Agile Explorer Certification."
+          certificationLink=""
+          certificationName="IBM Agile Explorer"
         />
       </div>
     </div>
