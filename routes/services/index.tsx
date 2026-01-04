@@ -1,63 +1,123 @@
 import { define } from "../../utils.ts";
+import ServicesCard from "../../components/ServicesCard.tsx";
+import CertificationBadge from "../../components/CertificationBadge.tsx";
 
 export default define.page(() => {
   return (
-    <div class="flex flex-row justify-center items-center gap-4 mb-12 mt-6 lg:py-12 lg:gap-24">
-      <div class="card flex-col sm:flex-row w-5/6 sm:w-full glass shadow-md mx-2 sm:mx-0 sm:max-w-3xl sm:min-h-xl">
-        <figure class="max-h-1/3 sm:max-h-full sm:w-1/2">
-          <img
-            src="mohammad-rahmani-oXlXu2qukGE-unsplash.jpg"
-            class="w-full mask mask-squircle m-2 shadow-lg opacity-75 max-h-5/6"
-            alt="Photo by Mohammad Rahmani on Unsplash"
-            title="Photo by Mohammad Rahmani on Unsplash"
-          />
-        </figure>
-        <div class="card-body w-full sm:w-1/2">
-          <h2 class="card-title text-3xl">Software Engineering</h2>
-          <p class="py-2 sm:py-6">
-            Includes designing, developing, and testing applications for
-            businesses and private individuals.
-          </p>
-          <div class="card-actions justify-end">
+    <div class="flex flex-col justify-center mx-2 *:mt-8 md:mb-6 xl:flex-col xl:justify-center">
+      <div class="text-left self-center mx-2 sm:text-justify xl:max-w-3/4">
+        <h2 class="text-4xl font-semibold mb-6">Bridging the Digital Divide</h2>
+        <p class="text-xl mb-4">
+          Technology is advancing at a staggering pace. Artificial intelligence,
+          5G, Making Tax Digital, as well as a whole range of other changes in
+          or because of technology are causing many people a great deal of
+          anxiety. As a consequence, not everyone is reaping the fruits of these
+          advancements.
+        </p>
+        <p class="text-xl mb-4">
+          This is known as the <strong>Digital Divide</strong>.
+        </p>
+        <div class="collapse collapse-plus mb-4 bg-base-100 border border-base-300">
+          <input type="radio" name="local-info-accordion" checked={false} />
+          <div class="collapse-title font-semibold text-2xl">
+            How does the Digital Divide affect Powys and Herefordshire?
           </div>
+          <div class="collapse-content text-base">
+            <p>
+              Rural communities and the elderly often struggle the most to keep
+              pace with changes to online governmental services. In Powys and
+              Herefordshire, these groups make up a significant proportion of
+              the population. While these improvements usually decrease public
+              spending, the real cost is passed on to the members of the public
+              in the form of a learning curve. That learning curve is too steep
+              for some, and unwanted by others.
+            </p>
+          </div>
+        </div>
+        <p class="text-xl mb-4">
+          I want to change that. I'm passionate about technology, but I think
+          that everyone should benefit from its products, not just the wealthy,
+          the young, and people in cities. With the technical aptitude and
+          extensive experience as a teacher, I'm on a mission to bridge the
+          Digital Divide.
+        </p>
+        <p class="text-xl mb-4">
+          If you feel anxious or underconfident about technology, or have been
+          affected by a recent change in technology, get in touch and we'll work
+          through the problem together.
+        </p>
+        <div class="flex flex-col items-center sm:flex-row sm:justify-center">
+          <a
+            href="/contact"
+            class="w-full mx-4 hover:cursor-pointer sm:btn-wide"
+          >
+            <button
+              type="button"
+              class="flex items-center btn btn-primary btn-xl w-full my-2 sm:btn-wide"
+            >
+              <span class="shrink">✉️</span>
+              <span class="grow">
+                Send a Message
+              </span>
+            </button>
+          </a>
+          <a
+            href="tel:+44-1497-543795"
+            class="w-full mx-4 hover:cursor-pointer sm:btn-wide"
+          >
+            <button
+              type="button"
+              class="flex items-center btn btn-primary btn-xl w-full my-2 sm:btn-wide"
+            >
+              <span class="shrink">
+                ☎️
+              </span>
+              <span class="grow">
+                Call
+              </span>
+            </button>
+          </a>
         </div>
       </div>
-      <div class="card flex-col-reverse sm:flex-row w-5/6 sm:w-full glass shadow-md mx-2 sm:mx-0 sm:max-w-3xl sm:min-h-xl">
-        <div class="card-body w-full sm:w-1/2">
-          <h2 class="card-title text-3xl">Digital Project Management</h2>
-          <p class="py-2 sm:py-6">
-            Includes creating and designing IT projects, such as finding the
-            right hardware and software products for a specific use case.
-          </p>
-          <div class="card-actions justify-end">
-          </div>
-        </div>
-        <figure class="max-h-1/3 sm:max-h-full sm:w-1/2">
-          <img
-            src="daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg"
-            class="w-full mask mask-squircle m-2 shadow-lg opacity-75 max-h-5/6"
-            alt="Photo by Daria Nepriakhina on Unsplash"
-            title="Photo by Daria Nepriakhina on Unsplash"
-          />
-        </figure>
+      <div class="flex flex-col justify-center items-center gap-4 md:mx-4 xl:gap-8 xl:flex-row xl:items-stretch xl:h-full">
+        <ServicesCard
+          cardTitle="Grow Your Business"
+          cardBodyText="The Digital Divide doesn't just affect people, it impacts businesses, too. Process automation and software have made large companies more profitable and efficient, but small-to-medium businesses can struggle to adapt. If you're reading this, and you're a business owner who can relate to this, send me a message or give me a call."
+        />
+        <ServicesCard
+          cardTitle="Get Connected"
+          cardBodyText="The internet is possibly the most revolutionary technological development so far. Yet almost 40 years after its invention, some are still struggling to connect. If you're looking for technical advice on how to best connect your home or business to the internet, I can help."
+        />
+        <ServicesCard
+          cardTitle="Learn How to Adapt"
+          cardBodyText="Technology is an area which is constantly being updated. The software you knew how to use yesterday might not be relevant tomorrow. If you're tired of feeling overwhelmed by these changes, or you want to learn how to adapt to them better, get in contact."
+        />
       </div>
-      <div class="card flex-col sm:flex-row w-5/6 sm:w-full glass shadow-md mx-2 sm:mx-0 sm:max-w-3xl sm:min-h-xl">
-        <figure class="max-h-1/3 sm:max-h-full sm:w-1/2">
-          <img
-            src="freestocks-I_pOqP6kCOI-unsplash.jpg"
-            class="w-full mask mask-squircle m-2 shadow-lg opacity-75 max-h-5/6"
-            alt="Photo by freestocks on Unsplash"
-            title="Photo by freestocks on Unsplash"
-          />
-        </figure>
-        <div class="card-body w-full sm:w-1/2">
-          <h2 class="card-title text-3xl">IT Support & Diagnostics</h2>
-          <p class="py-2 sm:py-6">
-            Includes fixing malfunctioning computer hardware and software.
-          </p>
-          <div class="card-actions justify-end">
-          </div>
-        </div>
+      <div class="flex flex-row h-full pb-4 justify-center items-center align-middle gap-2 md:gap-8 md:ml-8 xl:ml-0 lg:pb-8">
+        <CertificationBadge
+          imageSrc="digital-futures-academy-engineer-badge.png"
+          imageAlt="The Digital Futures Academy Certificate of Completion badge."
+          certificationLink="digital-futures-certificate.pdf"
+          certificationName="Digital Futures Software Engineering Academy"
+        />
+        <CertificationBadge
+          imageSrc="java-associate-foundations-badge.png"
+          imageAlt="The Oracle Java Foundations Associate certification badge."
+          certificationLink="oracle-foundations-associate-certification.pdf"
+          certificationName="Oracle Certified Java Foundations Associate"
+        />
+        <CertificationBadge
+          imageSrc="google-data-analytics-badge.png"
+          imageAlt="A badge showing Harry's Google Data Analytics Professional Certification."
+          certificationLink="google-data-analytics-certification.pdf"
+          certificationName="Google Data Analytics Professional"
+        />
+        <CertificationBadge
+          imageSrc="ibm-agile-explorer-badge.png"
+          imageAlt="A badge showing Harry's IBM Agile Explorer Certification."
+          certificationLink=""
+          certificationName="IBM Agile Explorer"
+        />
       </div>
     </div>
   );
