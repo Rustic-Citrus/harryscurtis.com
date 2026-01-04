@@ -8,7 +8,7 @@ export default function ServicesCard(
 ) {
   return (
     <div class="card card-xl max-w-xl bg-base-100 border-2 border-base-content/50 transition-colors shadow-lg">
-      <div class="card-body">
+      <div class="card-body px-4 sm:px-8 md:px-12">
         <h2 class="card-title text-xl sm:text-2xl md:text-3xl">{cardTitle}</h2>
         <p class="py-2 text-base text-justify leading-6 sm:leading-8 sm:text-lg">
           {cardBodyText}

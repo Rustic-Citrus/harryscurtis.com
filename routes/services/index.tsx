@@ -5,23 +5,24 @@ import CertificationBadge from "../../components/CertificationBadge.tsx";
 export default define.page(() => {
   return (
     <div class="flex flex-col justify-center mx-2 *:mt-8 md:mb-6 xl:flex-col xl:justify-center">
-      <div class="text-justify self-center mx-2 xl:max-w-3/4">
+      <div class="text-left self-center mx-2 sm:text-justify xl:max-w-3/4">
         <h2 class="text-4xl font-semibold mb-6">Bridging the Digital Divide</h2>
-        <p class="text-lg mb-4">
-          Technology is advancing at a frighteningly fast pace. Artificial
-          intelligence, 5G, Making Tax Digital, as well as a whole range of
-          other changes are causing many people a great deal of anxiety.
-          Consequently, many are not benefitting from these advancements.
+        <p class="text-xl mb-4">
+          Technology is advancing at a staggering pace. Artificial intelligence,
+          5G, Making Tax Digital, as well as a whole range of other changes in
+          or because of technology are causing many people a great deal of
+          anxiety. As a consequence, not everyone is reaping the fruits of these
+          advancements.
         </p>
-        <p class="text-lg mb-4">
+        <p class="text-xl mb-4">
           This is known as the <strong>Digital Divide</strong>.
         </p>
         <div class="collapse collapse-plus mb-4 bg-base-100 border border-base-300">
           <input type="radio" name="local-info-accordion" checked={false} />
-          <div class="collapse-title font-semibold">
+          <div class="collapse-title font-semibold text-2xl">
             How does the Digital Divide affect Powys and Herefordshire?
           </div>
-          <div class="collapse-content text-sm">
+          <div class="collapse-content text-base">
             <p>
               Rural communities and the elderly often struggle the most to keep
               pace with changes to online governmental services. In Powys and
@@ -33,36 +34,47 @@ export default define.page(() => {
             </p>
           </div>
         </div>
-        <p class="text-lg mb-4">
+        <p class="text-xl mb-4">
           I want to change that. I'm passionate about technology, but I think
           that everyone should benefit from its products, not just the wealthy,
           the young, and people in cities. With the technical aptitude and
           extensive experience as a teacher, I'm on a mission to bridge the
           Digital Divide.
         </p>
-        <p class="text-lg mb-4">
+        <p class="text-xl mb-4">
           If you feel anxious or underconfident about technology, or have been
           affected by a recent change in technology, get in touch and we'll work
           through the problem together.
         </p>
-        <div class="flex flex-col items-center">
-          <a href="/contact" class="w-full hover:cursor-pointer sm:btn-wide">
+        <div class="flex flex-col items-center sm:flex-row sm:justify-center">
+          <a
+            href="/contact"
+            class="w-full mx-4 hover:cursor-pointer sm:btn-wide"
+          >
             <button
               type="button"
-              class="btn btn-neutral w-full btn-lg my-2 hover:btn-info sm:btn-wide"
+              class="flex items-center btn btn-primary btn-xl w-full my-2 sm:btn-wide"
             >
-              ✉️ Send a Message
+              <span class="shrink">✉️</span>
+              <span class="grow">
+                Send a Message
+              </span>
             </button>
           </a>
           <a
             href="tel:+44-1497-543795"
-            class="w-full hover:cursor-pointer sm:btn-wide"
+            class="w-full mx-4 hover:cursor-pointer sm:btn-wide"
           >
             <button
               type="button"
-              class="btn btn-neutral btn-lg w-full my-2 hover:btn-info sm:btn-wide"
+              class="flex items-center btn btn-primary btn-xl w-full my-2 sm:btn-wide"
             >
-              ☎️ Call
+              <span class="shrink">
+                ☎️
+              </span>
+              <span class="grow">
+                Call
+              </span>
             </button>
           </a>
         </div>
@@ -81,7 +93,7 @@ export default define.page(() => {
           cardBodyText="Technology is an area which is constantly being updated. The software you knew how to use yesterday might not be relevant tomorrow. If you're tired of feeling overwhelmed by these changes, or you want to learn how to adapt to them better, get in contact."
         />
       </div>
-      <div class="flex flex-col h-full pb-4 justify-center items-center align-middle gap-2 md:gap-8 md:ml-8 xl:ml-0 lg:pb-8">
+      <div class="flex flex-row h-full pb-4 justify-center items-center align-middle gap-2 md:gap-8 md:ml-8 xl:ml-0 lg:pb-8">
         <CertificationBadge
           imageSrc="digital-futures-academy-engineer-badge.png"
           imageAlt="The Digital Futures Academy Certificate of Completion badge."
