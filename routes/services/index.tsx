@@ -70,15 +70,15 @@ export default define.page(() => {
       <div class="flex flex-col justify-center items-center gap-4 md:mx-4 xl:gap-8 xl:flex-row xl:items-stretch xl:h-full">
         <ServicesCard
           cardTitle="Grow Your Business"
-          cardBodyText="The Digital Divide doesn't just affect people, it impacts businesses, too. Process automation and software have made large companies more profitable and efficient, but small-to-medium businesses can struggle to adapt. If you're reading this, and you're a business owner who can relate to this, send me a message using the form above or give me a call."
+          cardBodyText="The Digital Divide doesn't just affect people, it impacts businesses, too. Process automation and software have made large companies more profitable and efficient, but small-to-medium businesses can struggle to adapt. If you're reading this, and you're a business owner who can relate to this, send me a message or give me a call."
         />
         <ServicesCard
           cardTitle="Get Connected"
-          cardBodyText="Overhauling the analogue systems that businesses inherit seems overwhelming, but the longer they linger, the more the inefficiency accrues over time. Digital transformation provides the answer. Sometimes, finding the solution for your business is as simple as getting a fresh perspective, and that's where I facilitate the transition."
+          cardBodyText="The internet is possibly the most revolutionary technological development so far. Yet almost 40 years after its invention, some are still struggling to connect. If you're looking for technical advice on how to best connect your home or business to the internet, I can help."
         />
         <ServicesCard
           cardTitle="Learn How to Adapt"
-          cardBodyText="With over 7 years of experience as a teacher, I have helped hundreds of people of all ages bridge the knowledge gap between where they were and where they wanted to be. Learning a new tool or skill can be the key to boosting your career or obtaining that qualification, but without guidance, it can feel like an unsurmountable task. As a teacher, I can help you learn, no matter the subject area."
+          cardBodyText="Technology is an area which is constantly being updated. The software you knew how to use yesterday might not be relevant tomorrow. If you're tired of feeling overwhelmed by these changes, or you want to learn how to adapt to them better, get in contact."
         />
       </div>
       <div class="flex flex-col h-full pb-4 justify-center items-center align-middle gap-2 md:gap-8 md:ml-8 xl:ml-0 lg:pb-8">
