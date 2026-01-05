@@ -4,4 +4,5 @@ export interface Post {
   date: Date;
   content: string;
   snippet: string;
+  tags: string[];
 }

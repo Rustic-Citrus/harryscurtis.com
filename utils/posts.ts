@@ -35,5 +35,6 @@ export async function getPost(slug: string): Promise<Post | null> {
     date: new Date(String(attrs.date)),
     content: body,
     snippet: String(attrs.snippet),
+    tags: String(attrs.tags).split(","),
   };
 }

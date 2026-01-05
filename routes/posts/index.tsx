@@ -15,11 +15,18 @@ export default define.page(async function BlogIndex() {
                   {post.title}
                 </h2>
                 <div class="card-subtitle text-base-content/80 mt-2">
-                  {new Date(post.date).toLocaleDateString("en-GB", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  <p>
+                    {new Date(post.date).toLocaleDateString("en-GB", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                  <p>
+                    {post.tags.map((tag, key) => (
+                      <span key={key} class="pr-4">#{tag}</span>
+                    ))}
+                  </p>
                 </div>
                 <p class="card-text mt-4 text-base-content">
                   {post.snippet.length > 250
