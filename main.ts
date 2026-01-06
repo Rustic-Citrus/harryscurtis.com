@@ -8,5 +8,3 @@ app.use(themeMiddleware);
 app.use(staticFiles());
 
 app.fsRoutes();
-
-app.listen();
