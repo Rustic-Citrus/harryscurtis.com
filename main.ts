@@ -7,7 +7,6 @@ app.use(themeMiddleware);
 
 app.use(staticFiles());
 
-// Include file-system based routes here
 app.fsRoutes();
 
-app.listen({ port: 4000 });
+app.listen();
