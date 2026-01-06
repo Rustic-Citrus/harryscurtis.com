@@ -1,6 +1,5 @@
 import { Post } from "../types.ts";
 
-// TODO: Move to Components. Doesn't need to be an Island.
 export default function FeaturedPosts({ posts }: { posts: Post[] }) {
   return (
     <div>
