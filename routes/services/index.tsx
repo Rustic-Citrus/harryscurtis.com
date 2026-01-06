@@ -53,7 +53,7 @@ export default define.page(() => {
           >
             <button
               type="button"
-              class="flex items-center btn btn-primary btn-xl w-full my-2 sm:btn-wide"
+              class="flex items-center btn btn-primary font-light btn-xl w-full my-2 sm:btn-wide"
             >
               <span class="shrink">✉️</span>
               <span class="grow">
@@ -67,7 +67,7 @@ export default define.page(() => {
           >
             <button
               type="button"
-              class="flex items-center btn btn-primary btn-xl w-full my-2 sm:btn-wide"
+              class="flex items-center btn btn-primary font-light btn-xl w-full my-2 sm:btn-wide"
             >
               <span class="shrink">
                 ☎️

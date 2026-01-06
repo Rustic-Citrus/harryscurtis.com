@@ -11,6 +11,7 @@ const buildFillerPost = (): Post => {
     date: new Date(),
     content: "N/A",
     snippet: "No more new posts yet. Come back soon!",
+    tags: ["come", "back", "soon"],
   };
 };
 
@@ -29,13 +30,14 @@ export default define.page(async function Home(_ctx) {
       </Head>
       <div class="flex justify-center w-full lg:w-1/3">
         <h1 class="text-4xl pt-10 font-bold pb-4">
-          Harry Stuart Curtis
+          Harry Curtis
         </h1>
         <span class="text-rotate text-7xl">
           <span class="justify-items-left">
             <span class="text-2xl">Digital Consultant</span>
             <span class="text-2xl">Software Engineer</span>
             <span class="text-2xl">Data Analyst</span>
+            <span class="text-2xl">IT Support Specialist</span>
           </span>
         </span>
 
@@ -71,11 +73,11 @@ export default define.page(async function Home(_ctx) {
             <a
               href="https://family.harryscurtis.com/"
               target="_blank"
-              class="flex justify-start hover:cursor-pointer"
+              class="flex justify-center hover:cursor-pointer"
             >
               <button
                 type="button"
-                class="btn btn-outline text-base hover:btn-info hover:text-white"
+                class="btn btn-primary text-base hover:btn-info hover:text-white"
               >
                 Family History Research
               </button>
@@ -99,10 +101,10 @@ export default define.page(async function Home(_ctx) {
             </p>
             <a
               href="/services"
-              class="flex justify-start hover:cursor-pointer"
+              class="flex justify-center hover:cursor-pointer"
             >
               <button
-                class="btn btn-outline text-base hover:btn-info hover:text-white"
+                class="btn btn-primary text-base hover:btn-info hover:text-white"
                 type="button"
               >
                 Services
@@ -123,10 +125,10 @@ export default define.page(async function Home(_ctx) {
             </p>
             <a
               href="/contact"
-              class="flex justify-start hover:cursor-pointer"
+              class="flex justify-center hover:cursor-pointer"
             >
               <button
-                class="btn btn-outline text-base hover:btn-info hover:text-white"
+                class="btn btn-primary text-base hover:btn-info hover:text-white"
                 type="button"
               >
                 Contact
