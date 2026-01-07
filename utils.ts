@@ -10,9 +10,12 @@ class OddParagraphError extends Error {
   }
 }
 
-export const elideParagraph = (paragraph: string): string => {
-  if (paragraph.length < 128) return paragraph; // No elision required.
-  let shortenedParagraph = paragraph.slice(0, 127);
+export const elideParagraph = (
+  paragraph: string,
+  maxLength: number,
+): string => {
+  if (paragraph.length < maxLength) return paragraph; // No elision required.
+  let shortenedParagraph = paragraph.slice(0, maxLength - 1);
   while (
     !((shortenedParagraph.at(shortenedParagraph.length - 1))?.match(/[^\w\s]+/))
   ) {
