@@ -1,14 +1,16 @@
 import { Post } from "../types.ts";
-import PostHoverCard from "../components/PostHoverCard.tsx";
+import TopPostCard from "../components/TopPostCard.tsx";
 
-interface FeaturedPostsProps {
+interface FeaturedPostsContainerProps {
   posts: Post[];
 }
 
-export default function FeaturedPosts({ posts }: FeaturedPostsProps) {
+export default function FeaturedPostsContainer(
+  { posts }: FeaturedPostsContainerProps,
+) {
   return (
     <div>
-      <PostHoverCard post={posts[0]} />
+      <TopPostCard post={posts[0]} />
       <div class="flex flex-col sm:flex-row gap-8">
         {posts.slice(1).map((post, index) => (
           <div

@@ -1,10 +1,10 @@
 import { Post } from "../types.ts";
 
-interface PostHoverCardProps {
+interface TopPostCardProps {
   post: Post;
 }
 
-export default function PostHoverCard({ post }: PostHoverCardProps) {
+export default function TopPostCard({ post }: TopPostCardProps) {
   return (
     // TODO: Edit the hover card styles so that it is a normal card on small screens.
     <a

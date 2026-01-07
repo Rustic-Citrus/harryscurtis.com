@@ -1,6 +1,6 @@
 import { define } from "../utils.ts";
 import { Head } from "fresh/runtime";
-import FeaturedPosts from "../components/FeaturedPosts.tsx";
+import FeaturedPostsContainer from "../components/FeaturedPostsContainer.tsx";
 import { getPosts } from "../utils/posts.ts";
 import { Post } from "../types.ts";
 
@@ -142,7 +142,7 @@ export default define.page(async function Home(_ctx) {
       </div>
       <div class="flex justify-center px-5 w-full lg:w-2/3">
         <h1 class="text-3xl font-bold">Featured Posts</h1>
-        <FeaturedPosts posts={posts} />
+        <FeaturedPostsContainer posts={posts} />
       </div>
     </div>
   );
