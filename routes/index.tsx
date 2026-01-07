@@ -29,15 +29,15 @@ export default define.page(async function Home(_ctx) {
         <title>Harry Curtis</title>
       </Head>
       <div class="flex justify-center w-full lg:w-1/3">
-        <h1 class="text-4xl pt-10 font-bold pb-4">
+        <h1 class="text-4xl pt-10 font-bold pb-4 text-center lg:text-left">
           Harry Curtis
         </h1>
         <span class="text-rotate text-7xl">
-          <span class="justify-items-left">
-            <span class="text-2xl">Digital Consultant</span>
-            <span class="text-2xl">Software Engineer</span>
-            <span class="text-2xl">Data Analyst</span>
-            <span class="text-2xl">IT Support Specialist</span>
+          <span class="w-full flex flex-col gap-10 justify-items-center align-middle text-center lg:text-left">
+            <p class="text-2xl">Digital Consultant</p>
+            <p class="text-2xl">Software Engineer</p>
+            <p class="text-2xl">Data Analyst</p>
+            <p class="text-2xl">IT Support Specialist</p>
           </span>
         </span>
 
@@ -140,8 +140,10 @@ export default define.page(async function Home(_ctx) {
           </div>
         </div>
       </div>
-      <div class="flex justify-center px-5 w-full lg:w-2/3">
-        <h1 class="text-3xl font-bold">Featured Posts</h1>
+      <div class="flex justify-center px-5 w-full">
+        <h1 class="text-3xl font-bold text-center lg:text-left">
+          Featured Posts
+        </h1>
         <FeaturedPostsContainer posts={posts} />
       </div>
     </div>

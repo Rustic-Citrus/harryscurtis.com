@@ -1,14 +1,23 @@
 import { Post } from "../types.ts";
+import { appendEllipsisToParagraph, elideParagraph } from "../utils.ts";
 
 interface PostCardProps {
   post: Post;
+  maxSnippetLength: number;
 }
 
-export default function PostCard({ post }: PostCardProps) {
+export default function PostCard({ post, maxSnippetLength }: PostCardProps) {
+  const verifiedSnippet = post.snippet.length > maxSnippetLength
+    ? appendEllipsisToParagraph(elideParagraph(post.snippet, maxSnippetLength))
+    : post.snippet;
+
   return (
-    <div class="card card-md shadow-sm bg-base-100 border-2 border-base-content/20 w-full hover:border-base-content/40 hover:shadow-md transition-colors max-w-md h-64">
-      <div class="card-body">
-        <a href={`/posts/${post.slug}`} class="group">
+    <a
+      href={`/posts/${post.slug}`}
+      class="group w-full max-w-md hover:cursor-pointer"
+    >
+      <div class="card card-md shadow-sm bg-base-100 border-2 border-base-content/20 w-full hover:border-base-content/40 hover:shadow-md transition-colors h-64">
+        <div class="card-body">
           <h2 class="card-title text-2xl font-bold group-hover:text-info transition-colors">
             {post.title}
           </h2>
@@ -19,13 +28,11 @@ export default function PostCard({ post }: PostCardProps) {
               day: "numeric",
             })}
           </div>
-          <p class="card-text mt-4 text-base-content">
-            {post.snippet.length > 250
-              ? `${post.snippet.slice(0, 250)}...`
-              : post.snippet}
+          <p class="card-text mt-4 text-base-content text-sm sm:text-base">
+            {verifiedSnippet}
           </p>
-        </a>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
