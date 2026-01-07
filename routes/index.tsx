@@ -43,6 +43,8 @@ export default define.page(async function Home(_ctx) {
 
         <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-colors">
           <input type="radio" name="homepage-accordion" />
+          {/* TODO: Shorten text for who am I section. */}
+          {/* TODO: Create about route with full text. */}
           <div class="collapse-title font-semibold">
             Who am I?
           </div>
@@ -70,6 +72,7 @@ export default define.page(async function Home(_ctx) {
               <em>family.harryscurtis.com</em>. If you would like to view or
               contribute to the research, you are welcome to request an account
             </p>
+
             <a
               href="https://family.harryscurtis.com/"
               target="_blank"

@@ -6,6 +6,7 @@ interface PostHoverCardProps {
 
 export default function PostHoverCard({ post }: PostHoverCardProps) {
   return (
+    // TODO: Edit the hover card styles so that it is a normal card on small screens.
     <a
       href={`/posts/${post.slug}`}
       class="hover-3d my-12 mx-2 w-full cursor-pointer transform-gpu will-change-transform"

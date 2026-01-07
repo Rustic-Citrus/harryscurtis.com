@@ -1,6 +1,7 @@
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
+    // TODO: Edit footer content so that telephone number is there.
     <footer class="footer footer-horizontal footer-center bg-base-100 shadow-sm p-4 grow">
       <nav class="grid grid-flow-col gap-6">
         <a href="/" class="link link-hover">Home</a>

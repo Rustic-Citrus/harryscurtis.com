@@ -12,6 +12,7 @@ export default function Navbar({ title, theme }: NavbarProps) {
         <a class="text-xl text-center pl-6 sm:pl-0">{title}</a>
       </div>
       <div class="navbar-end">
+        {/* BUG: When you click the toggle dark mode button first time, it doesn't work. Second time, it does. */}
         <label class="flex cursor-pointer gap-2 pr-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
