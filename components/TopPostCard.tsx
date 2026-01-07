@@ -6,13 +6,12 @@ interface TopPostCardProps {
 
 export default function TopPostCard({ post }: TopPostCardProps) {
   return (
-    // TODO: Edit the hover card styles so that it is a normal card on small screens.
     <a
       href={`/posts/${post.slug}`}
-      class="hover-3d my-12 mx-2 w-full cursor-pointer transform-gpu will-change-transform"
+      class="md:hover-3d my-12 mx-2 w-full cursor-pointer md:transform-gpu md:will-change-transform"
     >
-      <div class="card bg-base-100 border-2 border-base-content/20 md:w-1/2 h-64 transform-3d">
-        <div class="card-body w-full backface-hidden transform-[translateZ(20px)]">
+      <div class="card bg-base-100 border-2 border-base-content/20 h-64 max-w-md md:transform-3d">
+        <div class="card-body w-full md:backface-hidden md:transform-[translateZ(20px)]">
           <h2 class="card-title text-2xl font-bold transition-colors">
             {post.title}
           </h2>
