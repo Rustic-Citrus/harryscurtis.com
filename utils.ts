@@ -5,15 +5,17 @@ export const define = createDefine<{ theme: "rustic" | "night" }>();
 class OddParagraphError extends Error {
   constructor() {
     super(
-      "An odd paragraph was provided as an input; e.g. a paragraph with no full-stops before 255 characters.",
+      "An odd paragraph was provided as an input; e.g. a paragraph with no full-stops before 127 characters.",
     );
   }
 }
 
 export const elideParagraph = (paragraph: string): string => {
-  if (paragraph.length < 256) return paragraph; // No elision required.
-  let shortenedParagraph = paragraph.slice(0, 255);
-  while (shortenedParagraph.at(shortenedParagraph.length - 1) !== ".") {
+  if (paragraph.length < 128) return paragraph; // No elision required.
+  let shortenedParagraph = paragraph.slice(0, 127);
+  while (
+    !((shortenedParagraph.at(shortenedParagraph.length - 1))?.match(/[^\w\s]+/))
+  ) {
     shortenedParagraph = shortenedParagraph.slice(
       0,
       shortenedParagraph.length - 1,
