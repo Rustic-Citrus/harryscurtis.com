@@ -43,100 +43,61 @@ export default define.page(async function Home(_ctx) {
 
         <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-colors">
           <input type="radio" name="homepage-accordion" />
-          {/* TODO: Shorten text for who am I section. */}
-          {/* TODO: Create about route with full text. */}
-          <div class="collapse-title font-semibold">
+          <div class="collapse-title font-semibold text-lg">
             Who am I?
           </div>
           <div class="collapse-content">
-            <p class="text-justify text-sm pb-2">
-              I am a self-taught tech specialist based in Mid-Wales, with
+            <p class="text-base pb-2">
+              I'm Harry, a self-taught techie based in Mid-Wales. I have
               qualifications and experience in Software Engineering, Data
               Analysis, the Java programming language, and a range of other
-              technical skills. My professional focus is to help ordinary people
-              and small businesses with change, such as managing the migration
-              of an inventory and point-of-sale system or to find the right
-              software and hardware for your requirements.
+              technical skills. Before I made the switch to technology, I was an
+              English teacher in Brazil.
             </p>
-            <p class="text-justify text-sm pb-2">
-              Before I decided to become a Software Engineer, I taught English
-              in the South of Brazil. I worked with children, teenagers, and
-              young adults, and had a fulfilling role in their development as
-              people. I taught myself Portuguese, earned a degree in Philosophy
-              during the Covid-19 pandemic, and met my wife, Heloísa, who has
-              now emigrated to the UK, and lives with me here, in Hay-on-Wye.
-            </p>
-            <p class="text-justify text-sm pb-2">
-              When I find the time, I research local and family history, of
-              which I keep a record at the domain{" "}
-              <em>family.harryscurtis.com</em>. If you would like to view or
-              contribute to the research, you are welcome to request an account
-            </p>
-
-            <a
-              href="https://family.harryscurtis.com/"
-              target="_blank"
-              class="flex justify-center hover:cursor-pointer"
-            >
-              <button
-                type="button"
-                class="btn btn-primary text-base hover:btn-info hover:text-white"
-              >
-                Family History Research
-              </button>
-            </a>
           </div>
         </div>
         <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-color">
           <input type="radio" name="homepage-accordion" />
-          <div class="collapse-title font-semibold">
-            How can I help?
+          <div class="collapse-title font-semibold text-lg">
+            What do I do?
           </div>
           <div class="collapse-content">
-            <p class="text-sm pb-2">
-              I can help with a broad range of technology-related challenges,
+            <p class="text-base pb-2">
+              I help people with a broad range of technology-related challenges,
               from complex application development projects to everyday problems
-              with mobile phones.
-            </p>
-            <p class="text-sm mb-4">
-              For a more detailed description of the services which I can offer,
-              please click the Services button below.
-            </p>
-            <a
-              href="/services"
-              class="flex justify-center hover:cursor-pointer"
-            >
-              <button
-                class="btn btn-primary text-base hover:btn-info hover:text-white"
-                type="button"
+              with mobile phones.{" "}
+              <a
+                href="/services"
+                class="font-bold transition-colors hover:cursor-pointer hover:text-info"
               >
-                Services
-              </button>
-            </a>
+                Click here to find out more about the technical services I
+                offer.
+              </a>
+            </p>
           </div>
         </div>
         <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-colors">
           <input type="radio" name="homepage-accordion" />
-          <div class="collapse-title font-semibold">
+          <div class="collapse-title font-semibold text-lg">
             How can I contact you?
           </div>
           <div class="collapse-content">
-            <p class="text-sm mb-4">
-              If you would like to contact me for help with a problem or if you
-              have any other enquiries, please use the Contact page, which you
-              can find by clicking or tapping the button below.
-            </p>
-            <a
-              href="/contact"
-              class="flex justify-center hover:cursor-pointer"
-            >
-              <button
-                class="btn btn-primary text-base hover:btn-info hover:text-white"
-                type="button"
+            <p class="text-base mb-4">
+              If you'd like to chat, please{" "}
+              <a
+                href="/contact"
+                class="font-bold transition-colors hover:cursor-pointer hover:text-info"
               >
-                Contact
-              </button>
-            </a>
+                use the contacts page
+              </a>{" "}
+              or{" "}
+              <a
+                href="tel:+44-1497-543-795"
+                class="font-bold transition-colors hover:cursor-pointer hover:text-info"
+              >
+                give me a call on 01497 543795
+              </a>.
+            </p>
           </div>
         </div>
       </div>
