@@ -17,11 +17,11 @@ export default function TopPostCard({ post }: TopPostCardProps) {
   return (
     <a
       href={`/posts/${post.slug}`}
-      class="group my-12 mx-2 cursor-pointer motion-safe:hover-3d"
+      class="group my-12 mx-2 cursor-pointer motion-safe:hover-3d motion-safe:transform-gpu motion-safe:will-change-transform"
     >
-      <div class="card bg-base-100 border-2 border-base-content/20 h-64 max-w-md transition-colors group-hover:border-base-content/40">
-        <div class="card-body w-full md:backface-hidden">
-          <h2 class="card-title text-2xl font-bold transition-colors group-hover:text-info">
+      <div class="card bg-base-100 border-2 border-base-content/20 h-64 max-w-md">
+        <div class="card-body w-full motion-safe:md:backface-hidden">
+          <h2 class="card-title text-2xl font-bold">
             {post.title}
           </h2>
           <div class="card-subtitle text-base mt-2">
