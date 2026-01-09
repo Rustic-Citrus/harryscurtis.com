@@ -28,7 +28,7 @@ export default define.page(async function Home(_ctx) {
       <Head>
         <title>Harry Curtis</title>
       </Head>
-      <div class="flex justify-center w-full lg:w-1/3">
+      <div class="flex justify-center w-full min-w-md md:min-w-lg">
         <h1 class="text-4xl pt-10 font-bold pb-4 text-center lg:text-left">
           Harry Curtis
         </h1>

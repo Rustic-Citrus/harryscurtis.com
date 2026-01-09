@@ -14,11 +14,11 @@ export default function PostCard({ post, maxSnippetLength }: PostCardProps) {
   return (
     <a
       href={`/posts/${post.slug}`}
-      class="group w-full max-w-md hover:cursor-pointer"
+      class="group w-full max-w-md p-2 hover:cursor-pointer"
     >
       <div class="card card-md shadow-sm bg-base-100 border-2 border-base-content/20 w-full hover:border-base-content/40 hover:shadow-md transition-colors h-64">
         <div class="card-body">
-          <h2 class="card-title text-2xl font-bold group-hover:text-info transition-colors">
+          <h2 class="card-title text-2xl font-bold group-focus:text-info group-hover:text-info transition-colors">
             {post.title}
           </h2>
           <div class="card-subtitle text-base-content/80 mt-2">
