@@ -1,5 +1,6 @@
 import ContactForm from "../../islands/ContactForm.tsx";
 import { define } from "../../utils.ts";
+import { Head } from "fresh/runtime";
 
 // NOTE: Can this handler be moved to the app definition as per Fresh >2.0 conventions?
 export const handler = define.handlers({
@@ -74,19 +75,29 @@ export default define.page((_ctx) => {
   const siteKey = Deno.env.get("RECAPTCHA_SITE_KEY") as string;
   return (
     <div class="flex flex-col justify-center items-center grow mt-4 mx-2 md:mx-12">
-      {/* TODO: Change mockup phone background and design. */}
-      <div class="mockup-phone border-[#ff8938] max-md:contents my-5">
+      <Head>
+        <title>Harry Curtis: Contact Me</title>
+      </Head>
+      <div class="mockup-phone border-primary max-md:contents my-5">
         <div class="mockup-phone-camera max-md:hidden"></div>
-        <div class="mockup-phone-display max-md:contents">
-          <div class="flex flex-col gap-4 justify-end w-full h-full md:bg-[url(https://img.daisyui.com/images/stock/453966.webp)]">
+        {/* NOTE: bg-blend class with secondary colour? */}
+        <div class="mockup-phone-display max-md:contents md:bg-[url(avechenri-YGgD98icPtg-unsplash.jpg)]">
+          <div class="flex flex-col gap-4 justify-end w-full h-full">
             <div class="chat chat-start px-1">
-              {/* FIX: Update chat bubbles to use website colours. */}
-              <div class="chat-bubble py-4 md:bg-green-500 md:text-white">
+              <div class="chat-header ">
+                Harry Curtis
+                <time class="text-xs opacity-50">2 hours ago</time>
+              </div>
+              <div class="chat-bubble py-4 text-lg md:bg-primary md:text-primary-content">
                 <p>Hey! Thanks for taking the time to visit the site.</p>
               </div>
             </div>
             <div class="chat chat-start px-1">
-              <div class="chat-bubble py-4 md:bg-green-500 md:text-white">
+              <div class="chat-header">
+                Harry Curtis
+                <time class="text-xs opacity-50">2 hours ago</time>
+              </div>
+              <div class="chat-bubble py-4 text-lg md:bg-primary md:text-primary-content">
                 <p>
                   You can leave a message using the form below.
                 </p>
