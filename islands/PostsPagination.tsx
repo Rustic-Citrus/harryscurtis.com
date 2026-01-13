@@ -1,16 +1,19 @@
-import { currentPageInPosts } from "../utils/state.ts";
+import { Signal } from "@preact/signals";
 
 interface PostsPaginationProps {
+  currentPageSignal: Signal<number>;
   pageCount: number;
 }
 
-export default function PostsPagination({ pageCount }: PostsPaginationProps) {
+export default function PostsPagination(
+  { currentPageSignal, pageCount }: PostsPaginationProps,
+) {
   const buttons = [];
   for (let i = 0; i < pageCount; i++) {
     buttons.push(
       <button
         type="button"
-        onClick={() => currentPageInPosts.value = i}
+        onClick={() => currentPageSignal.value = i}
         class="join-item btn"
       >
         {i + 1}
