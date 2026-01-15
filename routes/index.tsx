@@ -20,10 +20,11 @@ export default define.page(function Home(ctx) {
       posts.push(fillerPost);
     }
   };
-  if (!ctx.state.featuredPosts || ctx.state.featuredPosts.length < 3) {
+  if (!ctx.state.featuredPosts) {
     createFillerPosts(featuredPosts);
   } else {
     featuredPosts = ctx.state.featuredPosts;
+    createFillerPosts(featuredPosts);
   }
   return (
     <div class="hero-content flex grow min-w-screen flex-col lg:flex-row align-items-center justify-items-center gap-4 *:m-5 *:flex *:flex-col *:gap-2">

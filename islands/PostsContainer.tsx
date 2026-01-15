@@ -1,65 +1,63 @@
 import { useSignal } from "@preact/signals";
-import { useEffect } from "preact/hooks";
 import { Post } from "@/types.ts";
 // @ts-types="preact"
-import { JSX } from "preact";
-export default function PostsContainer() {
-  const posts = useSignal<Post[]>([]);
-  const pages = useSignal<Post[][]>([]);
-  const currentPage = useSignal(0);
-  const buttons = useSignal<JSX.Element[]>([]);
-  const postsPerPage = 2;
+interface PostsContainerProps {
+  posts: Post[];
+}
+export default function PostsContainer({ posts }: PostsContainerProps) {
+  const POSTS_PER_PAGE = 5;
   const goToPage = (index: number) => {
     currentPage.value = index;
   };
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch("/api/posts");
-      const body = await response.json();
-      posts.value = body;
-      for (let i = 0; i < posts.value.length; i += postsPerPage) {
-        pages.value.push(posts.value.slice(i, i + postsPerPage));
-      }
-      for (let i = 0; i < pages.value.length; i++) {
-        buttons.value.push(
-          <button
-            key={i}
-            type="button"
-            class={`join-item btn ${
-              currentPage.value === i ? "btn-active" : ""
-            }`}
-            onClick={() => goToPage(i)}
-          >
-            {i + 1}
-          </button>,
-        );
-      }
-    };
-    fetchPosts();
-  }, []);
+  const pages = [];
+  for (let i = 0; i < posts.length; i += POSTS_PER_PAGE) {
+    pages.push(posts.slice(i, i + POSTS_PER_PAGE));
+  }
+  const currentPage = useSignal(0);
+  const buttons = [];
+  for (let i = 0; i < pages.length; i++) {
+    buttons.push(
+      <button
+        key={i}
+        type="button"
+        class={`join-item btn btn-primary ${
+          currentPage.value === i ? "btn-active" : ""
+        }`}
+        onClick={() => goToPage(i)}
+      >
+        {i + 1}
+      </button>,
+    );
+  }
   return (
     <>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 gap-8 grow items-center">
         <ul
           key={currentPage.value}
-          class="list bg-base-100 rounded-box shadow-md"
+          class="list bg-base-300 rounded-box shadow-md max-w-[800px]"
         >
-          {posts.value.length > 0
-            ? pages.value[currentPage.value].map((post, key) => (
-              <li key={key} class="list-row">
-                <div>
-                  <div>{post.title}</div>
-                  <div class="text-xs uppercase font-semibold opacity-60">
-                    {post.date}
-                  </div>
-                </div>
-                <p class="list-col-wrap text-xs">
-                  {post.snippet}
-                </p>
+          {posts.length > 0
+            ? pages[currentPage.value].map((post, key) => (
+              <li
+                key={key}
+                class="list-row hover:shadow-sm transition-shadow group"
+              >
                 <a href={`posts/${post.slug}`}>
-                  <button type="button" class="btn btn-square btn-ghost">
-                    Read
-                  </button>
+                  <div>
+                    <div class="text-lg group-hover:text-info transition-colors">
+                      {post.title}
+                    </div>
+                    <div class="text-base uppercase font-semibold opacity-60">
+                      {new Date(post.date).toLocaleDateString("en-GB", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </div>
+                  </div>
+                  <p class="list-col-wrap text-base">
+                    {post.snippet}
+                  </p>
                 </a>
               </li>
             ))
@@ -67,7 +65,7 @@ export default function PostsContainer() {
         </ul>
       </div>
       <div class="join">
-        {buttons.value}
+        {buttons}
       </div>
     </>
   );
