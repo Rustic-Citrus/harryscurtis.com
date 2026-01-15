@@ -1,7 +1,8 @@
 import { createDefine } from "fresh";
-
-export const define = createDefine<{ theme: "rustic" | "night" }>();
-
+import { ContextState, Post } from "@/types.ts";
+import { extract } from "@std/front-matter/yaml";
+import { join } from "@std/path";
+export const define = createDefine<ContextState>();
 class OddParagraphError extends Error {
   constructor() {
     super(
@@ -9,7 +10,6 @@ class OddParagraphError extends Error {
     );
   }
 }
-
 export const elideParagraph = (
   paragraph: string,
   maxLength: number,
@@ -29,9 +29,41 @@ export const elideParagraph = (
   }
   return shortenedParagraph;
 };
-
 export const appendEllipsisToParagraph = (paragraph: string): string => {
   return paragraph.at(paragraph.length - 1) === " "
     ? paragraph + "…"
     : paragraph + " …";
 };
+export async function getPost(slug: string): Promise<Post | null> {
+  const text = await Deno.readTextFile(join(Deno.cwd(), "posts", `${slug}.md`));
+  const { attrs, body } = extract<Record<string, unknown>>(text);
+  return {
+    slug,
+    title: String(attrs.title),
+    date: new Date(String(attrs.date)),
+    content: body,
+    snippet: String(attrs.snippet),
+    tags: String(attrs.tags).split(","),
+  };
+}
+export async function getPosts(): Promise<Post[]> {
+  const posts: Post[] = [];
+  const postsDir = join(Deno.cwd(), "posts");
+  try {
+    for await (const entry of Deno.readDir(postsDir)) {
+      if (entry.isFile && entry.name.endsWith(".md")) {
+        const slug = entry.name.replace(".md", "");
+        const post = await getPost(slug);
+        if (post) {
+          posts.push(post);
+        }
+      }
+    }
+  } catch (error) {
+    if (!(error instanceof Deno.errors.NotFound)) {
+      throw error;
+    }
+  }
+  posts.sort((a, b) => b.date.getTime() - a.date.getTime());
+  return posts;
+}
