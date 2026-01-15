@@ -1,9 +1,7 @@
 import { Head } from "fresh/runtime";
 import { define } from "@/utils.ts";
 import FeaturedPostsContainer from "@/components/FeaturedPostsContainer.tsx";
-import { getPosts } from "@/utils/posts.ts";
 import { Post } from "@/types.ts";
-
 const buildFillerPost = (): Post => {
   return {
     slug: "",
@@ -14,15 +12,19 @@ const buildFillerPost = (): Post => {
     tags: ["come", "back", "soon"],
   };
 };
-
-export default define.page(async function Home(_ctx) {
-  const posts: Post[] = (await getPosts()).slice(0, 3);
-
-  while (posts.length < 3) {
-    const fillerPost = buildFillerPost();
-    posts.push(fillerPost);
+export default define.page(function Home(ctx) {
+  let featuredPosts: Post[] = [];
+  const createFillerPosts = (posts: Post[]) => {
+    while (posts.length < 3) {
+      const fillerPost = buildFillerPost();
+      posts.push(fillerPost);
+    }
+  };
+  if (!ctx.state.featuredPosts || ctx.state.featuredPosts.length < 3) {
+    createFillerPosts(featuredPosts);
+  } else {
+    featuredPosts = ctx.state.featuredPosts;
   }
-
   return (
     <div class="hero-content flex grow min-w-screen flex-col lg:flex-row align-items-center justify-items-center gap-4 *:m-5 *:flex *:flex-col *:gap-2">
       <Head>
@@ -40,7 +42,6 @@ export default define.page(async function Home(_ctx) {
             <p class="text-2xl">IT Support Specialist</p>
           </span>
         </span>
-
         <div class="collapse collapse-plus bg-base-100 border border-base-content/20 hover:border-base-content/40 transition-colors">
           <input type="radio" name="homepage-accordion" />
           <div class="collapse-title font-semibold text-lg">
@@ -105,7 +106,7 @@ export default define.page(async function Home(_ctx) {
         <h1 class="text-3xl font-bold text-center lg:text-left">
           Featured Posts
         </h1>
-        <FeaturedPostsContainer posts={posts} />
+        <FeaturedPostsContainer posts={featuredPosts} />
       </div>
     </div>
   );

@@ -1,14 +1,10 @@
-import { define } from "../../utils.ts";
-import { getPost } from "../../utils/posts.ts";
+import { define } from "@/utils.ts";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-
-export default define.page(async function BlogPost(ctx) {
-  const post = await getPost(ctx.params.slug);
-  if (!post) {
-    return <div>Post not found</div>;
+export default define.page(function BlogPost(ctx) {
+  if (!ctx.state.post) {
+    return <div class="text-lg">Post not found.</div>;
   }
-
   return (
     <div class="flex flex-col grow px-4 py-8 mx-auto md:max-w-4xl w-full">
       <div class="mb-8">
@@ -19,9 +15,9 @@ export default define.page(async function BlogPost(ctx) {
           &larr; Back to Posts
         </a>
       </div>
-      <h1 class="text-5xl font-bold mb-4">{post.title}</h1>
+      <h1 class="text-5xl font-bold mb-4">{ctx.state.post.title}</h1>
       <div class="text-base-content mb-8">
-        {new Date(post.date).toLocaleDateString("en-GB", {
+        {new Date(ctx.state.post.date).toLocaleDateString("en-GB", {
           year: "numeric",
           month: "long",
           day: "numeric",
@@ -31,7 +27,7 @@ export default define.page(async function BlogPost(ctx) {
         <Markdown
           remarkPlugins={[remarkGfm]}
         >
-          {post.content}
+          {ctx.state.post.content}
         </Markdown>
       </div>
     </div>

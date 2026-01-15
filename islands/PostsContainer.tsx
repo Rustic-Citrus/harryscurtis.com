@@ -1,34 +1,26 @@
 import { useSignal } from "@preact/signals";
-import { useEffect, useState } from "preact/hooks";
-import { getPosts } from "@/utils/posts.ts";
+import { useEffect } from "preact/hooks";
 import { Post } from "@/types.ts";
 // @ts-types="preact"
 import { JSX } from "preact";
-
 export default function PostsContainer() {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [pages, setPages] = useState<Post[][]>([]);
+  const posts = useSignal<Post[]>([]);
+  const pages = useSignal<Post[][]>([]);
   const currentPage = useSignal(0);
   const buttons = useSignal<JSX.Element[]>([]);
   const postsPerPage = 2;
-
   const goToPage = (index: number) => {
     currentPage.value = index;
   };
-
   useEffect(() => {
     const fetchPosts = async () => {
-      const pagesToSet = [];
-      const x = await getPosts();
-      setPosts(x);
-
-      for (let i = 0; i < posts.length; i += postsPerPage) {
-        pagesToSet.push(posts.slice(i, i + postsPerPage));
+      const response = await fetch("/api/posts");
+      const body = await response.json();
+      posts.value = body;
+      for (let i = 0; i < posts.value.length; i += postsPerPage) {
+        pages.value.push(posts.value.slice(i, i + postsPerPage));
       }
-
-      setPages(pagesToSet);
-
-      for (let i = 0; i < pages.length; i++) {
+      for (let i = 0; i < pages.value.length; i++) {
         buttons.value.push(
           <button
             key={i}
@@ -43,10 +35,8 @@ export default function PostsContainer() {
         );
       }
     };
-
     fetchPosts();
   }, []);
-
   return (
     <>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -54,8 +44,8 @@ export default function PostsContainer() {
           key={currentPage.value}
           class="list bg-base-100 rounded-box shadow-md"
         >
-          {posts.length > 0
-            ? pages[currentPage.value].map((post, key) => (
+          {posts.value.length > 0
+            ? pages.value[currentPage.value].map((post, key) => (
               <li key={key} class="list-row">
                 <div>
                   <div>{post.title}</div>
@@ -76,7 +66,6 @@ export default function PostsContainer() {
             : <li>No posts!</li>}
         </ul>
       </div>
-
       <div class="join">
         {buttons.value}
       </div>
