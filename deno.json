@@ -35,8 +35,6 @@
     "@std/front-matter": "jsr:@std/front-matter@^1.0.9",
     "@deno/gfm": "jsr:@deno/gfm@^0.11.0",
     "marked": "npm:marked@^17.0.1",
-    "react": "npm:preact@^10.28.2/compat",
-    "react-dom": "npm:preact@^10.28.2/compat",
     "react-markdown": "npm:react-markdown@^10.1.0",
     "remark-gfm": "npm:remark-gfm@^4.0.1"
   },

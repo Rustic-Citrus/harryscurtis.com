@@ -2,6 +2,7 @@ import { extract } from "@std/front-matter/yaml";
 import { join } from "@std/path";
 import { Post } from "../types.ts";
 
+// TODO: Move getPosts to an API route.
 export async function getPosts(): Promise<Post[]> {
   const posts: Post[] = [];
   const postsDir = join(Deno.cwd(), "posts");
@@ -25,6 +26,7 @@ export async function getPosts(): Promise<Post[]> {
   return posts.sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
+// TODO: Move getPost to an API route.
 export async function getPost(slug: string): Promise<Post | null> {
   const text = await Deno.readTextFile(join(Deno.cwd(), "posts", `${slug}.md`));
   const { attrs, body } = extract<Record<string, unknown>>(text);

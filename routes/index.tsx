@@ -1,8 +1,8 @@
-import { define } from "../utils.ts";
 import { Head } from "fresh/runtime";
-import FeaturedPostsContainer from "../components/FeaturedPostsContainer.tsx";
-import { getPosts } from "../utils/posts.ts";
-import { Post } from "../types.ts";
+import { define } from "@/utils.ts";
+import FeaturedPostsContainer from "@/components/FeaturedPostsContainer.tsx";
+import { getPosts } from "@/utils/posts.ts";
+import { Post } from "@/types.ts";
 
 const buildFillerPost = (): Post => {
   return {
