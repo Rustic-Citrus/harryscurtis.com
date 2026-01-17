@@ -24,3 +24,8 @@ export const addPostsToContext = define.middleware(async (ctx) => {
   }
   return await ctx.next();
 });
+export const addPrefersDarkToContext = define.middleware((ctx) => {
+  ctx.state.prefersDark =
+    globalThis.window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return ctx.next();
+});

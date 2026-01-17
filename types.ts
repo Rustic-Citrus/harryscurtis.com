@@ -11,4 +11,5 @@ export interface ContextState {
   featuredPosts?: Post[];
   post?: Post;
   posts?: Post[];
+  prefersDark?: boolean;
 }

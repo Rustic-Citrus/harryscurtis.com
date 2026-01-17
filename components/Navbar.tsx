@@ -1,13 +1,13 @@
 interface NavbarProps {
   title: string;
   theme: "summer" | "wood";
+  prefersDark: boolean;
 }
 
-export default function Navbar({ title, theme }: NavbarProps) {
+export default function Navbar({ title, theme, prefersDark }: NavbarProps) {
   return (
     <div class="navbar sticky top-0 bg-base-100/75 backdrop-blur-md shadow-sm z-100">
-      <div class="hidden sm:block sm:navbar-start">
-      </div>
+      <div class="hidden sm:block sm:navbar-start" />
       <div class="navbar-start sm:navbar-center sm:justify-center">
         <a class="text-xl text-center pl-6 sm:pl-0">{title}</a>
       </div>
@@ -37,7 +37,7 @@ export default function Navbar({ title, theme }: NavbarProps) {
             <input
               type="checkbox"
               class="toggle theme-controller pointer-events-none self-center"
-              checked={theme === "wood"}
+              checked={theme === "wood" || prefersDark}
               value="wood"
               tabIndex={-1}
               readOnly
@@ -63,6 +63,7 @@ export default function Navbar({ title, theme }: NavbarProps) {
             tabindex={0}
             role="button"
             class="btn btn-ghost btn-circle"
+            aria-label="Open Drop-down Menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +71,7 @@ export default function Navbar({ title, theme }: NavbarProps) {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              role="img"
             >
               <path
                 stroke-linecap="round"

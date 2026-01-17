@@ -1,8 +1,7 @@
-import { define } from "../utils.ts";
-import "../assets/styles.css";
-
-import Footer from "../components/Footer.tsx";
-import Navbar from "../components/Navbar.tsx";
+import { define } from "@/utils.ts";
+import "@/assets/styles.css";
+import Footer from "@/components/Footer.tsx";
+import Navbar from "@/components/Navbar.tsx";
 
 export default define.page(function App({ Component, url, state }) {
   const RECAPTCHA_SITE_KEY = Deno.env.get("RECAPTCHA_SITE_KEY");
@@ -20,6 +19,8 @@ export default define.page(function App({ Component, url, state }) {
     ? "Harry Curtis"
     : getNavbarTitle(url.pathname);
 
+  const prefersDark = state.prefersDark;
+
   return (
     <html data-theme={state.theme}>
       <head>
@@ -33,7 +34,11 @@ export default define.page(function App({ Component, url, state }) {
         <title>Harry Curtis</title>
       </head>
       <body class="flex flex-col justify-between min-h-screen animate-clockwise bg-radial-[at_67%_67%] from-base-100 via-base-200 to-base-400 bg-size-[200%_200%]">
-        <Navbar title={navbarTitle} theme={state.theme} />
+        <Navbar
+          title={navbarTitle}
+          theme={state.theme}
+          prefersDark={prefersDark ? prefersDark : false}
+        />
         <Component />
         <Footer />
       </body>
