@@ -12,7 +12,7 @@ export default function CertificationBadge(
   return (
     <div class="w-72 xl:w-48">
       <label for={`${imageSrc}_modal`} class="hover:cursor-pointer">
-        <img src={imageSrc} alt={imageAlt} class="grayscale-75" />
+        <img src={imageSrc} alt={imageAlt} class="grayscale-100" />
       </label>
       <input type="checkbox" id={`${imageSrc}_modal`} class="modal-toggle" />
       <div class="modal" role="dialog">
@@ -28,10 +28,19 @@ export default function CertificationBadge(
             Click the <strong>Download</strong> button to obtain a copy.
           </p>
           <div class="modal-action">
-            <a href={`${certificationLink}`} class="btn" download>
+            <a
+              href={`${certificationLink}`}
+              class="btn"
+              aria-label={`Download a copy of Harry's ${certificationName} certificate.`}
+              download
+            >
               Download
             </a>
-            <label for={`${imageSrc}_modal`} class="btn btn-error text-white">
+            <label
+              for={`${imageSrc}_modal`}
+              class="btn btn-error text-white"
+              aria-label="Close download certificate modal"
+            >
               Cancel
             </label>
           </div>
