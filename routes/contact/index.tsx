@@ -86,7 +86,7 @@ export default define.page((_ctx) => {
             <div class="chat chat-start px-1">
               <div class="chat-header ">
                 Harry Curtis
-                <time class="text-xs opacity-50">2 hours ago</time>
+                <time class="text-xs opacity-50">Just now</time>
               </div>
               <div class="chat-bubble py-4 text-lg md:bg-primary md:text-primary-content">
                 <p>Hey! Thanks for taking the time to visit the site.</p>
@@ -95,7 +95,7 @@ export default define.page((_ctx) => {
             <div class="chat chat-start px-1">
               <div class="chat-header">
                 Harry Curtis
-                <time class="text-xs opacity-50">2 hours ago</time>
+                <time class="text-xs opacity-50">Just now</time>
               </div>
               <div class="chat-bubble py-4 text-lg md:bg-primary md:text-primary-content">
                 <p>

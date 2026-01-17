@@ -153,7 +153,7 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
       />
       <button
         type="submit"
-        class="btn btn-info text-white self-end w-full max-w-2/3 my-2"
+        class="btn btn-primary text-base-content self-end w-full max-w-2/3 my-2"
       >
         {submitButtonContent}
       </button>

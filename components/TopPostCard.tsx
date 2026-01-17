@@ -19,7 +19,7 @@ export default function TopPostCard({ post }: TopPostCardProps) {
       href={`/posts/${post.slug}`}
       class="group my-12 mx-2 cursor-pointer md:motion-safe:hover-3d md:motion-safe:transform-gpu md:motion-safe:will-change-transform"
     >
-      <div class="card bg-base-100 border-2 border-base-content/20 max-md:group-focus:border-base-content/40 max-md:group-hover:border-base-content/40 max-md:transition-colors h-64 max-w-md">
+      <div class="card bg-primary border-2 border-base-content/20 max-md:group-focus:border-base-content/40 max-md:group-hover:border-base-content/40 max-md:transition-colors h-64 max-w-md">
         <div class="card-body w-full md:motion-safe:backface-hidden">
           <h2 class="card-title text-2xl font-bold transition-colors max-md:group-focus:text-info max-md:group-hover:text-info motion-safe:md:transition-none">
             {post.title}

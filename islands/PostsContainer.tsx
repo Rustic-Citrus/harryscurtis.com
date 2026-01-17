@@ -34,7 +34,7 @@ export default function PostsContainer({ posts }: PostsContainerProps) {
       <div class="grid grid-cols-1 gap-8 grow items-center">
         <ul
           key={currentPage.value}
-          class="list bg-base-300 rounded-box shadow-md max-w-[800px]"
+          class="list bg-primary rounded-box shadow-md max-w-[800px]"
         >
           {posts.length > 0
             ? pages[currentPage.value].map((post, key) => (
