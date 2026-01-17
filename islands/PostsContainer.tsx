@@ -24,6 +24,7 @@ export default function PostsContainer({ posts }: PostsContainerProps) {
           currentPage.value === i ? "btn-active" : ""
         }`}
         onClick={() => goToPage(i)}
+        aria-label={`Go to Page ${i}`}
       >
         {i + 1}
       </button>,
@@ -34,20 +35,22 @@ export default function PostsContainer({ posts }: PostsContainerProps) {
       <div class="grid grid-cols-1 gap-8 grow items-center">
         <ul
           key={currentPage.value}
-          class="list bg-primary rounded-box shadow-md max-w-[800px]"
+          class="list bg-primary rounded-box shadow-md max-w-200"
         >
           {posts.length > 0
             ? pages[currentPage.value].map((post, key) => (
-              <li
+              <a
+                href={`posts/${post.slug}`}
+                aria-label={`Read ${post.title}`}
                 key={key}
-                class="list-row hover:shadow-sm transition-shadow group"
+                class="group"
               >
-                <a href={`posts/${post.slug}`}>
+                <li class="list-row hover:shadow-sm transition-shadow">
                   <div>
                     <div class="text-lg group-hover:text-info transition-colors">
                       {post.title}
                     </div>
-                    <div class="text-base uppercase font-semibold opacity-60">
+                    <div class="text-base uppercase font-semibold opacity-60 py-1">
                       {new Date(post.date).toLocaleDateString("en-GB", {
                         year: "numeric",
                         month: "long",
@@ -58,13 +61,13 @@ export default function PostsContainer({ posts }: PostsContainerProps) {
                   <p class="list-col-wrap text-base">
                     {post.snippet}
                   </p>
-                </a>
-              </li>
+                </li>
+              </a>
             ))
             : <li>No posts!</li>}
         </ul>
       </div>
-      <div class="join">
+      <div class="join mt-8">
         {buttons}
       </div>
     </>
