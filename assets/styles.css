@@ -5,7 +5,7 @@
 @plugin "@tailwindcss/typography";
 
 @plugin "daisyui" {
-  themes: rustic --default, night --prefersdark;
+  themes: summer --default, wood --prefersdark;
 }
 
 @theme {
@@ -13,7 +13,7 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "rustic";
+  name: "summer";
   default: true;
   prefersdark: false;
   color-scheme: "light";
@@ -51,18 +51,18 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "night";
+  name: "wood";
   default: false;
   prefersdark: true;
   color-scheme: "dark";
-  --color-base-100: oklch(30.12% 0.000 0);
+  --color-base-100: oklch(35.31% 0.010 114.60);
   --color-base-200: oklch(24.73% 0.027 73.30);
   --color-base-300: oklch(27.66% 0.034 69.37);
   --color-base-400: oklch(29.66% 0.049 68.54);
   --color-base-500: oklch(35.14% 0.073 66.17);
   --color-base-600: "#5319A5";
   --color-base-content: oklch(95% 0 0);
-  --color-primary: oklch(33.41% 0.090 135.01);
+  --color-primary: oklch(37.76% 0.077 150.21);
   --color-primary-content: oklch(95% 0 0);
   --color-secondary: oklch(80% 0.045 203.388);
   --color-secondary-content: oklch(15% 0 0);

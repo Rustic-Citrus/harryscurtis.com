@@ -4,7 +4,7 @@ import { Post } from "@/types.ts";
 export const themeMiddleware = define.middleware(async (ctx) => {
   const cookies = getCookies(ctx.req.headers);
   const theme = cookies.theme;
-  if (theme === "rustic" || theme === "night") {
+  if (theme === "summer" || theme === "wood") {
     ctx.state.theme = theme;
   }
   return await ctx.next();

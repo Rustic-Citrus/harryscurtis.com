@@ -1,6 +1,6 @@
 interface NavbarProps {
   title: string;
-  theme: "rustic" | "night";
+  theme: "summer" | "wood";
 }
 
 export default function Navbar({ title, theme }: NavbarProps) {
@@ -32,13 +32,13 @@ export default function Navbar({ title, theme }: NavbarProps) {
             href="/api/theme"
             data-fresh-disable-lock
             class="flex"
-            aria-label="Toggle Night Mode"
+            aria-label="Toggle Dark Mode"
           >
             <input
               type="checkbox"
               class="toggle theme-controller pointer-events-none self-center"
-              checked={theme === "night"}
-              value="night"
+              checked={theme === "wood"}
+              value="wood"
               tabIndex={-1}
               readOnly
             />

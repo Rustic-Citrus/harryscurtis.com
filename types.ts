@@ -7,7 +7,7 @@ export interface Post {
   tags: string[];
 }
 export interface ContextState {
-  theme: "rustic" | "night";
+  theme: "summer" | "wood";
   featuredPosts?: Post[];
   post?: Post;
   posts?: Post[];

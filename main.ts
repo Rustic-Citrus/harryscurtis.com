@@ -10,7 +10,7 @@ export const app = new App<ContextState>();
 app.get("/api/theme", (ctx) => {
   const cookies = getCookies(ctx.req.headers);
   const savedTheme = cookies.theme;
-  const newTheme = savedTheme === "rustic" ? "night" : "rustic";
+  const newTheme = savedTheme === "summer" ? "wood" : "summer";
   const headers = new Headers();
   setCookie(headers, {
     name: "theme",
