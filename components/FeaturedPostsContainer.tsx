@@ -1,6 +1,6 @@
-import { Post } from "../types.ts";
-import PostCard from "../components/PostCard.tsx";
-import TopPostCard from "../components/TopPostCard.tsx";
+import { Post } from "@/types.ts";
+import PostCard from "@/components/PostCard.tsx";
+import TopPostCard from "@/components/TopPostCard.tsx";
 
 interface FeaturedPostsContainerProps {
   posts: Post[];

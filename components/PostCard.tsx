@@ -1,5 +1,5 @@
-import { Post } from "../types.ts";
-import { appendEllipsisToParagraph, elideParagraph } from "../utils.ts";
+import { Post } from "@/types.ts";
+import { appendEllipsisToParagraph, elideParagraph } from "@/utils.ts";
 
 interface PostCardProps {
   post: Post;
@@ -11,10 +11,15 @@ export default function PostCard({ post, maxSnippetLength }: PostCardProps) {
     ? appendEllipsisToParagraph(elideParagraph(post.snippet, maxSnippetLength))
     : post.snippet;
 
+  const postUrl = post.slug === "/" || post.slug === ""
+    ? undefined
+    : `/posts/${post.slug}`;
+
   return (
     <a
-      href={`/posts/${post.slug}`}
+      href={postUrl}
       class="group w-full max-w-md p-2 hover:cursor-pointer"
+      aria-label="Go to Post"
     >
       <div class="card card-md shadow-sm bg-base-100 border-2 border-base-content/20 w-full hover:border-base-content/40 hover:shadow-md transition-colors h-64">
         <div class="card-body">
