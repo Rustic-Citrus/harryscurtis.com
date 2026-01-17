@@ -1,5 +1,6 @@
 import { define } from "@/utils.ts";
 import Markdown from "react-markdown";
+import { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 export default define.page(function BlogPost(ctx) {
   if (!ctx.state.post) {
@@ -25,6 +26,9 @@ export default define.page(function BlogPost(ctx) {
       </div>
       <div class="prose md:prose-lg">
         <Markdown
+          urlTransform={(
+            url,
+          ) => (url.startsWith("tel:") ? url : defaultUrlTransform(url))}
           remarkPlugins={[remarkGfm]}
         >
           {ctx.state.post.content}
