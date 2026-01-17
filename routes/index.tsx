@@ -104,9 +104,9 @@ export default define.page(function Home(ctx) {
         </div>
       </div>
       <div class="flex justify-center px-5 w-full">
-        <h1 class="text-3xl font-bold text-center lg:text-left">
+        <h2 class="text-3xl font-bold text-center lg:text-left">
           Featured Posts
-        </h1>
+        </h2>
         <FeaturedPostsContainer posts={featuredPosts} />
       </div>
     </div>

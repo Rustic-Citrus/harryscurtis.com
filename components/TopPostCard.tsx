@@ -21,9 +21,9 @@ export default function TopPostCard({ post }: TopPostCardProps) {
     >
       <div class="card bg-primary border-2 border-base-content/20 max-md:group-focus:border-base-content/40 max-md:group-hover:border-base-content/40 max-md:transition-colors h-64 max-w-md">
         <div class="card-body w-full md:motion-safe:backface-hidden">
-          <h2 class="card-title text-2xl font-bold transition-colors max-md:group-focus:text-info max-md:group-hover:text-info motion-safe:md:transition-none">
+          <h3 class="card-title text-2xl font-bold transition-colors max-md:group-focus:text-info max-md:group-hover:text-info motion-safe:md:transition-none">
             {post.title}
-          </h2>
+          </h3>
           <div class="card-subtitle text-base mt-2">
             {new Date(post.date).toLocaleDateString("en-GB", {
               year: "numeric",

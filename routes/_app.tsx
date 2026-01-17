@@ -22,16 +22,21 @@ export default define.page(function App({ Component, url, state }) {
   const prefersDark = state.prefersDark;
 
   return (
-    <html data-theme={state.theme}>
+    <html data-theme={state.theme} lang="en">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="A Software Engineer, IT Support Specialist, and Digital Consultant based in Mid-Wales, providing computer-related services to people and businesses."
+        />
+        <link rel="icon" href="favicon.ico" />
         <script
           src={`https://www.google.com/recaptcha/enterprise.js?render=${RECAPTCHA_SITE_KEY}`}
           defer
         >
         </script>
-        <title>Harry Curtis</title>
+        <title>Harry Curtis: IT &amp; Software Services</title>
       </head>
       <body class="flex flex-col justify-between min-h-screen animate-clockwise bg-radial-[at_67%_67%] from-base-100 via-base-200 to-base-400 bg-size-[200%_200%]">
         <Navbar

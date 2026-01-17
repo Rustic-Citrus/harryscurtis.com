@@ -17,9 +17,9 @@ export default function CertificationBadge(
       <input type="checkbox" id={`${imageSrc}_modal`} class="modal-toggle" />
       <div class="modal" role="dialog">
         <div class="modal-box">
-          <h3 class="text-lg font-bold">
+          <h4 class="text-lg font-bold">
             {certificationName} Certification
-          </h3>
+          </h4>
           <p class="pt-4 pb-2">
             You can view my {certificationName}{" "}
             certification to verify its authenticity.
