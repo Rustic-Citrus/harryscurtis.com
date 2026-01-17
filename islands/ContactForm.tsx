@@ -66,52 +66,21 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
   return (
     <form
       method="POST"
-      class="chat-bubble flex flex-col w-full md:w-3/4 md:bg-neutral-100 md:text-black"
+      class="chat-bubble flex flex-col w-full bg-base-100 md:w-3/4 md:bg-neutral-100 md:text-black"
       onSubmit={onFormSubmit}
     >
-      {alert.value && (
-        <div
-          role="alert"
-          class={`alert ${
-            alert.value.type === "success" ? "alert-success" : "alert-error"
-          } mb-4`}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="stroke-current shrink-0 h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            {alert.value.type === "success"
-              ? (
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              )
-              : (
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              )}
-          </svg>
-          <span>{alert.value.message}</span>
-        </div>
-      )}
       <fieldset class="fieldset">
-        <legend class="fieldset-legend md:text-black">Your name</legend>
+        <legend class="fieldset-legend md:text-black" id="nameLegend">
+          Your name
+        </legend>
         <input
           type="text"
-          class="input validator bg-neutral-100 text-black border-neutral-800"
+          class="input validator bg-neutral-100 text-black border-neutral-800 w-full"
           name="name"
           placeholder="Type here"
           minLength={2}
           maxLength={24}
+          aria-labelledby="nameLegend"
           required
         />
         <div class="validator-hint hidden">
@@ -119,12 +88,15 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
         </div>
       </fieldset>
       <fieldset class="fieldset">
-        <legend class="fieldset-legend md:text-black">Your email</legend>
+        <legend class="fieldset-legend md:text-black" id="emailLegend">
+          Your email
+        </legend>
         <input
           type="email"
-          class="input validator bg-neutral-100 text-black border-neutral-800"
+          class="input validator bg-neutral-100 text-black border-neutral-800 w-full"
           name="email"
           placeholder="Type here"
+          aria-labelledby="emailLegend"
           required
         />
         <div class="validator-hint hidden">
@@ -132,13 +104,16 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
         </div>
       </fieldset>
       <fieldset class="fieldset">
-        <legend class="fieldset-legend md:text-black">Your message</legend>
+        <legend class="fieldset-legend md:text-black" id="messageLegend">
+          Your message
+        </legend>
         <textarea
-          class="textarea validator h-24 bg-neutral-100 text-black border-neutral-800"
+          class="textarea validator h-24 bg-neutral-100 text-black border-neutral-800 w-full"
           placeholder="Message"
           name="message"
           minLength={5}
           maxLength={1000}
+          aria-labelledby="messageLegend"
           required
         >
         </textarea>
@@ -154,6 +129,7 @@ export default function ContactForm({ siteKey }: { siteKey: string }) {
       <button
         type="submit"
         class="btn btn-primary text-base-content self-end w-full max-w-2/3 my-2"
+        aria-label="Send Message"
       >
         {submitButtonContent}
       </button>
