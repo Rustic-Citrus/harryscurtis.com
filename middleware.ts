@@ -11,11 +11,18 @@ export const themeMiddleware = define.middleware(async (ctx) => {
 });
 export const addPostToContext = define.middleware(async (ctx) => {
   const slug = ctx.params.slug;
-  const post: Post | null = await getPost(slug);
-  if (post) {
-    ctx.state.post = post;
+  try {
+    const post: Post | null = await getPost(slug);
+    if (post) {
+      ctx.state.post = post;
+    }
+    return await ctx.next();
+  } catch {
+    return new Response("Post not found. Redirecting to posts directory.", {
+      status: 301,
+      headers: { "Location": "/posts" },
+    });
   }
-  return await ctx.next();
 });
 export const addPostsToContext = define.middleware(async (ctx) => {
   const posts: Post[] = await getPosts();
