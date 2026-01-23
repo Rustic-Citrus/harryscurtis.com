@@ -11,32 +11,39 @@ export default define.page((_ctx) => {
       </Head>
       <div class="mockup-phone border-primary max-md:contents my-5">
         <div class="mockup-phone-camera max-md:hidden" />
-        <div class="mockup-phone-display max-md:contents md:bg-[url(avechenri-YGgD98icPtg-unsplash.jpg)]">
-          <div class="flex flex-col gap-4 justify-end w-full h-full">
-            <div class="chat chat-start px-1">
-              <div class="chat-header ">
-                Harry Curtis
-                <time class="text-xs opacity-50">Just now</time>
+        <div class="mockup-phone-display max-md:contents">
+          <div class="relative h-full w-full overflow-hidden">
+            <img
+              src="/avechenri-YGgD98icPtg-unsplash.jpg"
+              class="hidden md:block absolute inset-0 w-full h-full object-cover z-0"
+              alt="A photograph of Pen-y-Fan, a mountain in the Brecon Beacons National Park"
+            />
+            <div class="flex flex-col gap-4 justify-end w-full h-full z-10">
+              <div class="chat chat-start px-1">
+                <div class="chat-header z-10 md:text-white">
+                  Harry Curtis
+                  <time class="text-xs opacity-50 md:text-white">Just now</time>
+                </div>
+                <div class="chat-bubble py-4 text-lg bg-base-100 md:bg-primary md:text-primary-content">
+                  <p>Hey! Thanks for taking the time to visit the site.</p>
+                </div>
               </div>
-              <div class="chat-bubble py-4 text-lg bg-base-100 md:bg-primary md:text-primary-content">
-                <p>Hey! Thanks for taking the time to visit the site.</p>
+              <div class="chat chat-start px-1">
+                <div class="chat-header z-10 md:text-white">
+                  Harry Curtis
+                  <time class="text-xs opacity-50 md:text-white">Just now</time>
+                </div>
+                <div class="chat-bubble py-4 text-lg bg-base-100 md:bg-primary md:text-primary-content">
+                  <p>
+                    You can leave a message using the form below.
+                  </p>
+                </div>
               </div>
+              <div class="chat chat-end self-end w-full px-1">
+                <ContactForm siteKey={siteKey} />
+              </div>
+              <div class="h-24" />
             </div>
-            <div class="chat chat-start px-1">
-              <div class="chat-header">
-                Harry Curtis
-                <time class="text-xs opacity-50">Just now</time>
-              </div>
-              <div class="chat-bubble py-4 text-lg bg-base-100 md:bg-primary md:text-primary-content">
-                <p>
-                  You can leave a message using the form below.
-                </p>
-              </div>
-            </div>
-            <div class="chat chat-end self-end w-full px-1">
-              <ContactForm siteKey={siteKey} />
-            </div>
-            <div class="h-24" />
           </div>
         </div>
       </div>
